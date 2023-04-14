@@ -1,0 +1,1507 @@
+Component: ARM Compiler 5.06 update 7 (build 960) Tool: armlink [4d3601]
+
+==============================================================================
+
+Section Cross References
+
+    main.o(i.UpdateVersion) refers to iapupdate.o(i.u8IapReadBuf) for u8IapReadBuf
+    main.o(i.main) refers to main.o(i.upgrade) for upgrade
+    main.o(i.upgrade) refers to iapupdate.o(i.u8IapReadBuf) for u8IapReadBuf
+    main.o(i.upgrade) refers to main.o(i.UpdateVersion) for UpdateVersion
+    main.o(i.upgrade) refers to iapupdate.o(i.u8IapEraserSector) for u8IapEraserSector
+    main.o(i.upgrade) refers to iapupdate.o(i.u8IapWriteBuf) for u8IapWriteBuf
+    main.o(i.upgrade) refers to iapupdate.o(i.vIapJumpToApp) for vIapJumpToApp
+    gd32f1x0_it.o(i.SysTick_Handler) refers to systick.o(i.delay_decrement) for delay_decrement
+    systick.o(i.delay_1ms) refers to ffltui.o(.text) for __aeabi_ui2f
+    systick.o(i.delay_1ms) refers to fmul.o(.text) for __aeabi_fmul
+    systick.o(i.delay_1ms) refers to ffixui.o(.text) for __aeabi_f2uiz
+    systick.o(i.delay_1ms) refers to systick.o(.data) for count_1ms
+    systick.o(i.delay_1us) refers to ffltui.o(.text) for __aeabi_ui2f
+    systick.o(i.delay_1us) refers to fmul.o(.text) for __aeabi_fmul
+    systick.o(i.delay_1us) refers to ffixui.o(.text) for __aeabi_f2uiz
+    systick.o(i.delay_1us) refers to systick.o(.data) for count_1us
+    systick.o(i.delay_decrement) refers to systick.o(.data) for delay
+    systick.o(i.systick_config) refers to gd32f1x0_misc.o(i.systick_clksource_set) for systick_clksource_set
+    systick.o(i.systick_config) refers to ffltui.o(.text) for __aeabi_ui2f
+    systick.o(i.systick_config) refers to fdiv.o(.text) for __aeabi_fdiv
+    systick.o(i.systick_config) refers to fmul.o(.text) for __aeabi_fmul
+    systick.o(i.systick_config) refers to system_gd32f1x0.o(.data) for SystemCoreClock
+    systick.o(i.systick_config) refers to systick.o(.data) for count_1us
+    usart.o(i.Crc16UsartReceiveChick) refers to usart.o(.constdata) for u16CrcUsarttab
+    usart.o(i.USART0_IRQHandler) refers to gd32f1x0_usart.o(i.usart_flag_get) for usart_flag_get
+    usart.o(i.USART0_IRQHandler) refers to gd32f1x0_usart.o(i.usart_interrupt_flag_clear) for usart_interrupt_flag_clear
+    usart.o(i.USART0_IRQHandler) refers to gd32f1x0_usart.o(i.usart_data_receive) for usart_data_receive
+    usart.o(i.USART0_IRQHandler) refers to gd32f1x0_dma.o(i.dma_channel_disable) for dma_channel_disable
+    usart.o(i.USART0_IRQHandler) refers to usart.o(i.Crc16UsartReceiveChick) for Crc16UsartReceiveChick
+    usart.o(i.USART0_IRQHandler) refers to memseta.o(.text) for __aeabi_memclr
+    usart.o(i.USART0_IRQHandler) refers to memmovea.o(.text) for __aeabi_memcpy
+    usart.o(i.USART0_IRQHandler) refers to usartapp.o(i.SendResponseData) for SendResponseData
+    usart.o(i.USART0_IRQHandler) refers to gd32f1x0_dma.o(i.dma_memory_address_config) for dma_memory_address_config
+    usart.o(i.USART0_IRQHandler) refers to gd32f1x0_dma.o(i.dma_transfer_number_config) for dma_transfer_number_config
+    usart.o(i.USART0_IRQHandler) refers to gd32f1x0_dma.o(i.dma_channel_enable) for dma_channel_enable
+    usart.o(i.USART0_IRQHandler) refers to usart.o(.bss) for UsartReveiveDataBuf
+    usart.o(i.USART0_IRQHandler) refers to usart.o(.data) for USARTWIRELESSRxWrtPtr
+    usart.o(i.UsartFetchData) refers to memseta.o(.text) for __aeabi_memclr
+    usart.o(i.UsartFetchData) refers to memmovea.o(.text) for __aeabi_memcpy
+    usart.o(i.UsartFetchData) refers to usart.o(.data) for USARTWIRELESSRxWrtPtr
+    usart.o(i.UsartFetchData) refers to usart.o(.bss) for USARTWIRELESSRxBuf
+    usart.o(i.dma_config) refers to gd32f1x0_rcu.o(i.rcu_periph_clock_enable) for rcu_periph_clock_enable
+    usart.o(i.dma_config) refers to gd32f1x0_dma.o(i.dma_deinit) for dma_deinit
+    usart.o(i.dma_config) refers to gd32f1x0_dma.o(i.dma_init) for dma_init
+    usart.o(i.dma_config) refers to gd32f1x0_dma.o(i.dma_circulation_disable) for dma_circulation_disable
+    usart.o(i.dma_config) refers to gd32f1x0_dma.o(i.dma_memory_to_memory_disable) for dma_memory_to_memory_disable
+    usart.o(i.dma_config) refers to gd32f1x0_usart.o(i.usart_dma_receive_config) for usart_dma_receive_config
+    usart.o(i.dma_config) refers to gd32f1x0_dma.o(i.dma_interrupt_enable) for dma_interrupt_enable
+    usart.o(i.dma_config) refers to gd32f1x0_dma.o(i.dma_channel_enable) for dma_channel_enable
+    usart.o(i.dma_config) refers to usart.o(.bss) for UsartReveiveDataBuf
+    usart.o(i.gpio_init) refers to gd32f1x0_rcu.o(i.rcu_periph_clock_enable) for rcu_periph_clock_enable
+    usart.o(i.gpio_init) refers to gd32f1x0_gpio.o(i.gpio_mode_set) for gpio_mode_set
+    usart.o(i.gpio_init) refers to gd32f1x0_gpio.o(i.gpio_output_options_set) for gpio_output_options_set
+    usart.o(i.gpio_init) refers to gd32f1x0_gpio.o(i.gpio_bit_reset) for gpio_bit_reset
+    usart.o(i.usart_dma_send) refers to gd32f1x0_dma.o(i.dma_channel_disable) for dma_channel_disable
+    usart.o(i.usart_dma_send) refers to gd32f1x0_dma.o(i.dma_memory_address_config) for dma_memory_address_config
+    usart.o(i.usart_dma_send) refers to gd32f1x0_dma.o(i.dma_transfer_number_config) for dma_transfer_number_config
+    usart.o(i.usart_dma_send) refers to gd32f1x0_dma.o(i.dma_channel_enable) for dma_channel_enable
+    usart.o(i.usart_dma_send) refers to gd32f1x0_usart.o(i.usart_dma_transmit_config) for usart_dma_transmit_config
+    usart.o(i.usart_dma_send) refers to gd32f1x0_dma.o(i.dma_flag_get) for dma_flag_get
+    usart.o(i.usart_init) refers to gd32f1x0_rcu.o(i.rcu_periph_clock_enable) for rcu_periph_clock_enable
+    usart.o(i.usart_init) refers to gd32f1x0_gpio.o(i.gpio_af_set) for gpio_af_set
+    usart.o(i.usart_init) refers to gd32f1x0_gpio.o(i.gpio_mode_set) for gpio_mode_set
+    usart.o(i.usart_init) refers to gd32f1x0_gpio.o(i.gpio_output_options_set) for gpio_output_options_set
+    usart.o(i.usart_init) refers to gd32f1x0_usart.o(i.usart_deinit) for usart_deinit
+    usart.o(i.usart_init) refers to gd32f1x0_usart.o(i.usart_baudrate_set) for usart_baudrate_set
+    usart.o(i.usart_init) refers to gd32f1x0_usart.o(i.usart_transmit_config) for usart_transmit_config
+    usart.o(i.usart_init) refers to gd32f1x0_usart.o(i.usart_receive_config) for usart_receive_config
+    usart.o(i.usart_init) refers to gd32f1x0_usart.o(i.usart_enable) for usart_enable
+    usart.o(i.usart_init) refers to gd32f1x0_usart.o(i.usart_interrupt_enable) for usart_interrupt_enable
+    usart.o(i.usart_init) refers to gd32f1x0_usart.o(i.usart_interrupt_flag_clear) for usart_interrupt_flag_clear
+    usart.o(i.usart_init) refers to gd32f1x0_usart.o(i.usart_data_receive) for usart_data_receive
+    usart.o(i.usart_init) refers to gd32f1x0_misc.o(i.nvic_irq_enable) for nvic_irq_enable
+    usartapp.o(i.GetSetInformationData) refers to usartapp.o(i.FunctionSet) for FunctionSet
+    usartapp.o(i.GetSetdata) refers to memseta.o(.text) for __aeabi_memclr4
+    usartapp.o(i.GetSetdata) refers to memmovea.o(.text) for __aeabi_memcpy
+    usartapp.o(i.GetSetdata) refers to rfid_cc1101.o(i.RfidWriteReg) for RfidWriteReg
+    usartapp.o(i.GetSetdata) refers to usartapp.o(.data) for SC_RFID_ADDR
+    usartapp.o(i.GetWirelesstData) refers to memseta.o(.text) for __aeabi_memclr4
+    usartapp.o(i.GetWirelesstData) refers to memmovea.o(.text) for __aeabi_memcpy
+    usartapp.o(i.GetWirelesstData) refers to rfid_driver.o(i.WL_SendData) for WL_SendData
+    usartapp.o(i.InsUsartTrsQueue) refers to memseta.o(.text) for __aeabi_memclr
+    usartapp.o(i.InsUsartTrsQueue) refers to memmovea.o(.text) for __aeabi_memcpy
+    usartapp.o(i.InsUsartTrsQueue) refers to usart.o(i.Crc16UsartReceiveChick) for Crc16UsartReceiveChick
+    usartapp.o(i.InsUsartTrsQueue) refers to usartapp.o(.data) for USARTWIRELESSTxWrtPtr
+    usartapp.o(i.InsUsartTrsQueue) refers to usartapp.o(.bss) for USARTWIRLELESSTxBuf
+    usartapp.o(i.ReUpdata) refers to memseta.o(.text) for __aeabi_memclr4
+    usartapp.o(i.ReUpdata) refers to usartapp.o(i.InsUsartTrsQueue) for InsUsartTrsQueue
+    usartapp.o(i.RecvUsartDataProc) refers to usart.o(i.UsartFetchData) for UsartFetchData
+    usartapp.o(i.RecvUsartDataProc) refers to memseta.o(.text) for __aeabi_memclr4
+    usartapp.o(i.RecvUsartDataProc) refers to memmovea.o(.text) for __aeabi_memcpy
+    usartapp.o(i.RecvUsartDataProc) refers to usartapp.o(i.GetWirelesstData) for GetWirelesstData
+    usartapp.o(i.RecvUsartDataProc) refers to usartapp.o(i.GetSetdata) for GetSetdata
+    usartapp.o(i.RecvUsartDataProc) refers to usartapp.o(i.GetSetInformationData) for GetSetInformationData
+    usartapp.o(i.RecvUsartDataProc) refers to usartapp.o(.data) for u8DestScNumbBackup
+    usartapp.o(i.SendHeartBeatData) refers to memseta.o(.text) for __aeabi_memclr4
+    usartapp.o(i.SendHeartBeatData) refers to usartapp.o(i.InsUsartTrsQueue) for InsUsartTrsQueue
+    usartapp.o(i.SendHeartBeatData) refers to usartapp.o(.data) for Version
+    usartapp.o(i.SendResponseData) refers to memmovea.o(.text) for __aeabi_memcpy4
+    usartapp.o(i.SendResponseData) refers to usartapp.o(i.InsUsartTrsQueue) for InsUsartTrsQueue
+    usartapp.o(i.SendStartData) refers to memseta.o(.text) for __aeabi_memclr4
+    usartapp.o(i.SendStartData) refers to usartapp.o(i.InsUsartTrsQueue) for InsUsartTrsQueue
+    usartapp.o(i.SendUsartDataProc) refers to usart.o(i.usart_dma_send) for usart_dma_send
+    usartapp.o(i.SendUsartDataProc) refers to usartapp.o(.data) for USARTWIRELESSTxWrtPtr
+    usartapp.o(i.SendUsartDataProc) refers to usartapp.o(.bss) for USARTWIRLELESSTxBuf
+    usartapp.o(i.SendWirelesstData) refers to memseta.o(.text) for __aeabi_memclr4
+    usartapp.o(i.SendWirelesstData) refers to memmovea.o(.text) for __aeabi_memcpy
+    usartapp.o(i.SendWirelesstData) refers to usartapp.o(i.InsUsartTrsQueue) for InsUsartTrsQueue
+    usartapp.o(i.TimeFun) refers to usartapp.o(i.timeoverset) for timeoverset
+    usartapp.o(i.TimeFun) refers to usartapp.o(i.UpdataInit) for UpdataInit
+    usartapp.o(i.TimeFun) refers to usartapp.o(.data) for u32timeover
+    usartapp.o(i.UpdataInit) refers to usartapp.o(.data) for u32RecvOffsetAddr
+    usartapp.o(i.UsartRecvProgProc) refers to usartapp.o(i.timeoverset) for timeoverset
+    usartapp.o(i.UsartRecvProgProc) refers to iapupdate.o(i.u8IapGetPrgStorageAddr) for u8IapGetPrgStorageAddr
+    usartapp.o(i.UsartRecvProgProc) refers to iapupdate.o(i.u8IapGetPrgSize) for u8IapGetPrgSize
+    usartapp.o(i.UsartRecvProgProc) refers to gd32f1x0_fmc.o(i.fmc_unlock) for fmc_unlock
+    usartapp.o(i.UsartRecvProgProc) refers to iapupdate.o(i.u8IapEraserSector) for u8IapEraserSector
+    usartapp.o(i.UsartRecvProgProc) refers to iapupdate.o(i.u8IapWriteBuf) for u8IapWriteBuf
+    usartapp.o(i.UsartRecvProgProc) refers to systick.o(i.delay_1ms) for delay_1ms
+    usartapp.o(i.UsartRecvProgProc) refers to iapupdate.o(i.u16IapExFlashCrc) for u16IapExFlashCrc
+    usartapp.o(i.UsartRecvProgProc) refers to iapupdate.o(i.u8IapReadBuf) for u8IapReadBuf
+    usartapp.o(i.UsartRecvProgProc) refers to gd32f1x0_fmc.o(i.fmc_lock) for fmc_lock
+    usartapp.o(i.UsartRecvProgProc) refers to iapupdate.o(i.vIapJumpToBoot) for vIapJumpToBoot
+    usartapp.o(i.UsartRecvProgProc) refers to usartapp.o(i.UpdataInit) for UpdataInit
+    usartapp.o(i.UsartRecvProgProc) refers to usartapp.o(.data) for u32NowRecvPacketNumbVERSION
+    usartapp.o(i.timeoverset) refers to usartapp.o(.data) for u32timeover
+    rfid_cc1101.o(i.ClrRxFifo) refers to rfid_cc1101.o(i.RfidStrobe) for RfidStrobe
+    rfid_cc1101.o(i.ClrRxFifo) refers to systick.o(i.delay_1us) for delay_1us
+    rfid_cc1101.o(i.EXTI0_1_IRQHandler) refers to gd32f1x0_exti.o(i.exti_interrupt_flag_get) for exti_interrupt_flag_get
+    rfid_cc1101.o(i.EXTI0_1_IRQHandler) refers to gd32f1x0_exti.o(i.exti_interrupt_flag_clear) for exti_interrupt_flag_clear
+    rfid_cc1101.o(i.EXTI0_1_IRQHandler) refers to rfid_cc1101.o(i.RfidReadStatusReg) for RfidReadStatusReg
+    rfid_cc1101.o(i.EXTI0_1_IRQHandler) refers to rfid_cc1101.o(i.RfidStrobe) for RfidStrobe
+    rfid_cc1101.o(i.EXTI0_1_IRQHandler) refers to rfid_cc1101.o(.data) for vu32CC1100State
+    rfid_cc1101.o(i.EXTI4_15_IRQHandler) refers to gd32f1x0_exti.o(i.exti_interrupt_flag_get) for exti_interrupt_flag_get
+    rfid_cc1101.o(i.EXTI4_15_IRQHandler) refers to gd32f1x0_exti.o(i.exti_interrupt_flag_clear) for exti_interrupt_flag_clear
+    rfid_cc1101.o(i.EXTI4_15_IRQHandler) refers to rfid_cc1101.o(i.RfidReadFifoProc) for RfidReadFifoProc
+    rfid_cc1101.o(i.EXTI4_15_IRQHandler) refers to memmovea.o(.text) for __aeabi_memcpy
+    rfid_cc1101.o(i.EXTI4_15_IRQHandler) refers to wireless.o(i.Wl_RxDataProc) for Wl_RxDataProc
+    rfid_cc1101.o(i.EXTI4_15_IRQHandler) refers to rfid_cc1101.o(.data) for u8RcvLength
+    rfid_cc1101.o(i.EXTI4_15_IRQHandler) refers to rfid_cc1101.o(.bss) for u8RcvData
+    rfid_cc1101.o(i.RFCtrlSetIDLE) refers to rfid_cc1101.o(i.RfidStrobe) for RfidStrobe
+    rfid_cc1101.o(i.RFCtrlSetIDLE) refers to rfid_cc1101.o(i.RfidReadStatusReg) for RfidReadStatusReg
+    rfid_cc1101.o(i.RFCtrlSetIDLE) refers to systick.o(i.delay_1us) for delay_1us
+    rfid_cc1101.o(i.RFID_GetFrame) refers to memmovea.o(.text) for __aeabi_memcpy
+    rfid_cc1101.o(i.RFID_GetFrame) refers to rfid_cc1101.o(.data) for u32RcvFrmPoolCnt
+    rfid_cc1101.o(i.RFID_GetFrame) refers to rfid_cc1101.o(.bss) for st_RFIDRcvFrmPool
+    rfid_cc1101.o(i.RFID_HarewreInit) refers to rfid_cc1101.o(i.RfidChipReset) for RfidChipReset
+    rfid_cc1101.o(i.RFID_HarewreInit) refers to systick.o(i.delay_1us) for delay_1us
+    rfid_cc1101.o(i.RFID_HarewreInit) refers to rfid_cc1101.o(i.RfidConfig) for RfidConfig
+    rfid_cc1101.o(i.RFID_HarewreInit) refers to rfid_cc1101.o(i.RfidWriteReg) for RfidWriteReg
+    rfid_cc1101.o(i.RFID_HarewreInit) refers to rfid_cc1101.o(.data) for st_RFChipPar
+    rfid_cc1101.o(i.RFID_HarewreInit) refers to rfid_cc1101.o(.constdata) for s_u8RFOutputPowerCfgTab
+    rfid_cc1101.o(i.RFTxSendPacket) refers to rfid_cc1101.o(i.SetRFChipIdle) for SetRFChipIdle
+    rfid_cc1101.o(i.RFTxSendPacket) refers to systick.o(i.delay_1us) for delay_1us
+    rfid_cc1101.o(i.RFTxSendPacket) refers to rfid_cc1101.o(i.RfidStrobe) for RfidStrobe
+    rfid_cc1101.o(i.RFTxSendPacket) refers to rfid_cc1101.o(i.RfidWriteReg) for RfidWriteReg
+    rfid_cc1101.o(i.RFTxSendPacket) refers to rfid_cc1101.o(i.RfidWriteFifo) for RfidWriteFifo
+    rfid_cc1101.o(i.RFTxSendPacket) refers to rfid_cc1101.o(i.RfidReadStatusReg) for RfidReadStatusReg
+    rfid_cc1101.o(i.RFTxSendPacket) refers to rfid_cc1101.o(.data) for vu32GDO0IntFlag
+    rfid_cc1101.o(i.RfidChipReset) refers to rfid_cc1101.o(i.SpiResetChipSingle) for SpiResetChipSingle
+    rfid_cc1101.o(i.RfidChipReset) refers to systick.o(i.delay_1us) for delay_1us
+    rfid_cc1101.o(i.RfidChipReset) refers to rfid_cc1101.o(i.RfidStrobe) for RfidStrobe
+    rfid_cc1101.o(i.RfidConfig) refers to rfid_cc1101.o(i.RfidWriteReg) for RfidWriteReg
+    rfid_cc1101.o(i.RfidConfig) refers to rfid_cc1101.o(.data) for st_RFChipPar
+    rfid_cc1101.o(i.RfidConfig) refers to rfid_cc1101.o(.constdata) for s_u8RFCReg_MDMCFG4
+    rfid_cc1101.o(i.RfidGetTxStatus) refers to rfid_cc1101.o(i.RfidStrobe) for RfidStrobe
+    rfid_cc1101.o(i.RfidReadAllStatusReg) refers to rfid_cc1101.o(i.RfidReadStatusReg) for RfidReadStatusReg
+    rfid_cc1101.o(i.RfidReadAllStatusReg) refers to systick.o(i.delay_1us) for delay_1us
+    rfid_cc1101.o(i.RfidReadFifo) refers to rfid_cc1101.o(i.SpiMcuRead) for SpiMcuRead
+    rfid_cc1101.o(i.RfidReadFifoProc) refers to systick.o(i.delay_1us) for delay_1us
+    rfid_cc1101.o(i.RfidReadFifoProc) refers to rfid_cc1101.o(i.RfidReadFifo) for RfidReadFifo
+    rfid_cc1101.o(i.RfidReadFifoProc) refers to rfid_cc1101.o(i.RfidStrobe) for RfidStrobe
+    rfid_cc1101.o(i.RfidReadFifoProc) refers to rfid_cc1101.o(i.SetRxMode) for SetRxMode
+    rfid_cc1101.o(i.RfidReadStatusReg) refers to rfid_cc1101.o(i.SpiMcuRead) for SpiMcuRead
+    rfid_cc1101.o(i.RfidRxRegInit) refers to systick.o(i.delay_1us) for delay_1us
+    rfid_cc1101.o(i.RfidRxRegInit) refers to rfid_cc1101.o(i.RfidWriteReg) for RfidWriteReg
+    rfid_cc1101.o(i.RfidRxRegInit) refers to rfid_cc1101.o(.data) for st_RFChipPar
+    rfid_cc1101.o(i.RfidRxRegInit) refers to rfid_cc1101.o(.constdata) for s_u8RFAttenuationCfgTab
+    rfid_cc1101.o(i.RfidSpiWrite) refers to rfid_cc1101.o(i.SpiMcuWrite) for SpiMcuWrite
+    rfid_cc1101.o(i.RfidStrobe) refers to gd32f1x0_gpio.o(i.gpio_bit_reset) for gpio_bit_reset
+    rfid_cc1101.o(i.RfidStrobe) refers to systick.o(i.delay_1us) for delay_1us
+    rfid_cc1101.o(i.RfidStrobe) refers to rfid_cc1101.o(i.WaitGPIOReset) for WaitGPIOReset
+    rfid_cc1101.o(i.RfidStrobe) refers to rfid_cc1101.o(i.spi_write) for spi_write
+    rfid_cc1101.o(i.RfidStrobe) refers to gd32f1x0_gpio.o(i.gpio_bit_set) for gpio_bit_set
+    rfid_cc1101.o(i.RfidStrobe) refers to rfid_cc1101.o(.data) for vu32CC1100State
+    rfid_cc1101.o(i.RfidWORRegInit) refers to rfid_cc1101.o(i.RfidWriteReg) for RfidWriteReg
+    rfid_cc1101.o(i.RfidWORRegInit) refers to systick.o(i.delay_1us) for delay_1us
+    rfid_cc1101.o(i.RfidWORRegInit) refers to rfid_cc1101.o(.data) for st_RFChipPar
+    rfid_cc1101.o(i.RfidWORRegInit) refers to rfid_cc1101.o(.constdata) for s_u8RFAttenuationCfgTab
+    rfid_cc1101.o(i.RfidWriteFifo) refers to rfid_cc1101.o(i.SpiMcuWrite) for SpiMcuWrite
+    rfid_cc1101.o(i.RfidWriteReg) refers to rfid_cc1101.o(i.RfidSpiWrite) for RfidSpiWrite
+    rfid_cc1101.o(i.SetRFChipIdle) refers to rfid_driver.o(i.RFID_Init) for RFID_Init
+    rfid_cc1101.o(i.SetRFChipIdle) refers to systick.o(i.delay_1us) for delay_1us
+    rfid_cc1101.o(i.SetRFChipIdle) refers to rfid_cc1101.o(i.RfidStrobe) for RfidStrobe
+    rfid_cc1101.o(i.SetRFChipIdle) refers to rfid_cc1101.o(i.RFCtrlSetIDLE) for RFCtrlSetIDLE
+    rfid_cc1101.o(i.SetRFChipSleep) refers to rfid_cc1101.o(i.RfidRxRegInit) for RfidRxRegInit
+    rfid_cc1101.o(i.SetRFChipSleep) refers to rfid_cc1101.o(i.RfidStrobe) for RfidStrobe
+    rfid_cc1101.o(i.SetRFChipSleepMode) refers to rfid_cc1101.o(i.SetRFChipSleep) for SetRFChipSleep
+    rfid_cc1101.o(i.SetRFChipSleepMode) refers to rfid_cc1101.o(i.SetRFChipWOR) for SetRFChipWOR
+    rfid_cc1101.o(i.SetRFChipSleepMode) refers to rfid_cc1101.o(.data) for g_u16RunningMode
+    rfid_cc1101.o(i.SetRFChipWOR) refers to rfid_cc1101.o(i.RfidWORRegInit) for RfidWORRegInit
+    rfid_cc1101.o(i.SetRFChipWOR) refers to rfid_cc1101.o(i.RfidStrobe) for RfidStrobe
+    rfid_cc1101.o(i.SetRxMode) refers to rfid_cc1101.o(i.RfidRxRegInit) for RfidRxRegInit
+    rfid_cc1101.o(i.SetRxMode) refers to rfid_cc1101.o(i.RfidStrobe) for RfidStrobe
+    rfid_cc1101.o(i.SetRxMode) refers to rfid_cc1101.o(i.RfidReadStatusReg) for RfidReadStatusReg
+    rfid_cc1101.o(i.SpiMcuRead) refers to gd32f1x0_gpio.o(i.gpio_bit_reset) for gpio_bit_reset
+    rfid_cc1101.o(i.SpiMcuRead) refers to systick.o(i.delay_1us) for delay_1us
+    rfid_cc1101.o(i.SpiMcuRead) refers to rfid_cc1101.o(i.WaitGPIOReset) for WaitGPIOReset
+    rfid_cc1101.o(i.SpiMcuRead) refers to rfid_cc1101.o(i.spi_write) for spi_write
+    rfid_cc1101.o(i.SpiMcuRead) refers to gd32f1x0_gpio.o(i.gpio_bit_set) for gpio_bit_set
+    rfid_cc1101.o(i.SpiMcuWrite) refers to gd32f1x0_gpio.o(i.gpio_bit_reset) for gpio_bit_reset
+    rfid_cc1101.o(i.SpiMcuWrite) refers to systick.o(i.delay_1us) for delay_1us
+    rfid_cc1101.o(i.SpiMcuWrite) refers to rfid_cc1101.o(i.WaitGPIOReset) for WaitGPIOReset
+    rfid_cc1101.o(i.SpiMcuWrite) refers to rfid_cc1101.o(i.spi_write) for spi_write
+    rfid_cc1101.o(i.SpiMcuWrite) refers to gd32f1x0_gpio.o(i.gpio_bit_set) for gpio_bit_set
+    rfid_cc1101.o(i.SpiResetChipSingle) refers to gd32f1x0_gpio.o(i.gpio_bit_set) for gpio_bit_set
+    rfid_cc1101.o(i.SpiResetChipSingle) refers to gd32f1x0_gpio.o(i.gpio_bit_reset) for gpio_bit_reset
+    rfid_cc1101.o(i.SpiResetChipSingle) refers to systick.o(i.delay_1us) for delay_1us
+    rfid_cc1101.o(i.WaitGPIOReset) refers to gd32f1x0_gpio.o(i.gpio_output_bit_get) for gpio_output_bit_get
+    rfid_cc1101.o(i.spi_write) refers to gd32f1x0_spi.o(i.spi_i2s_flag_get) for spi_i2s_flag_get
+    rfid_cc1101.o(i.spi_write) refers to gd32f1x0_spi.o(i.spi_i2s_data_transmit) for spi_i2s_data_transmit
+    rfid_cc1101.o(i.spi_write) refers to gd32f1x0_spi.o(i.spi_i2s_data_receive) for spi_i2s_data_receive
+    rfid_driver.o(i.GetRfidCurStatus) refers to rfid_cc1101.o(i.RfidGetTxStatus) for RfidGetTxStatus
+    rfid_driver.o(i.GetRfidSendEnable) refers to rfid_cc1101.o(i.RfidReadStatusReg) for RfidReadStatusReg
+    rfid_driver.o(i.RFID_FetchData) refers to rfid_cc1101.o(i.RFID_GetFrame) for RFID_GetFrame
+    rfid_driver.o(i.RFID_Init) refers to rfid_driver.o(i.RfidSpiInit) for RfidSpiInit
+    rfid_driver.o(i.RFID_Init) refers to rfid_driver.o(i.RfidGDOxIntInit) for RfidGDOxIntInit
+    rfid_driver.o(i.RFID_Init) refers to rfid_cc1101.o(i.RFID_HarewreInit) for RFID_HarewreInit
+    rfid_driver.o(i.RFID_Init) refers to rfid_cc1101.o(i.RfidWriteReg) for RfidWriteReg
+    rfid_driver.o(i.RFID_Init) refers to rfid_cc1101.o(i.SetRxMode) for SetRxMode
+    rfid_driver.o(i.RFID_Init) refers to usartapp.o(.data) for SC_RFID_ADDR
+    rfid_driver.o(i.RFID_SendData) refers to rfid_cc1101.o(i.RFTxSendPacket) for RFTxSendPacket
+    rfid_driver.o(i.RFID_SendData) refers to rfid_driver.o(i.SetRfidSRX) for SetRfidSRX
+    rfid_driver.o(i.RfidGDOxIntInit) refers to gd32f1x0_rcu.o(i.rcu_periph_clock_enable) for rcu_periph_clock_enable
+    rfid_driver.o(i.RfidGDOxIntInit) refers to gd32f1x0_gpio.o(i.gpio_mode_set) for gpio_mode_set
+    rfid_driver.o(i.RfidGDOxIntInit) refers to gd32f1x0_misc.o(i.nvic_irq_enable) for nvic_irq_enable
+    rfid_driver.o(i.RfidGDOxIntInit) refers to gd32f1x0_syscfg.o(i.syscfg_exti_line_config) for syscfg_exti_line_config
+    rfid_driver.o(i.RfidGDOxIntInit) refers to gd32f1x0_exti.o(i.exti_init) for exti_init
+    rfid_driver.o(i.RfidGDOxIntInit) refers to gd32f1x0_exti.o(i.exti_interrupt_flag_clear) for exti_interrupt_flag_clear
+    rfid_driver.o(i.RfidSpiConfig) refers to gd32f1x0_rcu.o(i.rcu_periph_clock_enable) for rcu_periph_clock_enable
+    rfid_driver.o(i.RfidSpiConfig) refers to gd32f1x0_gpio.o(i.gpio_af_set) for gpio_af_set
+    rfid_driver.o(i.RfidSpiConfig) refers to gd32f1x0_gpio.o(i.gpio_mode_set) for gpio_mode_set
+    rfid_driver.o(i.RfidSpiConfig) refers to gd32f1x0_gpio.o(i.gpio_output_options_set) for gpio_output_options_set
+    rfid_driver.o(i.RfidSpiConfig) refers to gd32f1x0_spi.o(i.spi_i2s_deinit) for spi_i2s_deinit
+    rfid_driver.o(i.RfidSpiConfig) refers to gd32f1x0_spi.o(i.spi_struct_para_init) for spi_struct_para_init
+    rfid_driver.o(i.RfidSpiConfig) refers to gd32f1x0_spi.o(i.spi_init) for spi_init
+    rfid_driver.o(i.RfidSpiConfig) refers to gd32f1x0_spi.o(i.spi_crc_polynomial_set) for spi_crc_polynomial_set
+    rfid_driver.o(i.RfidSpiConfig) refers to gd32f1x0_spi.o(i.spi_enable) for spi_enable
+    rfid_driver.o(i.RfidSpiInit) refers to rfid_driver.o(i.RfidSpiConfig) for RfidSpiConfig
+    rfid_driver.o(i.SetRcvedBackCallFunc) refers to rfid_cc1101.o(.data) for RcvedBackCallFunc
+    rfid_driver.o(i.SetRfidSIDLE) refers to rfid_cc1101.o(i.RFCtrlSetIDLE) for RFCtrlSetIDLE
+    rfid_driver.o(i.SetRfidSRX) refers to rfid_cc1101.o(i.SetRxMode) for SetRxMode
+    rfid_driver.o(i.SetRxAddrFilter) refers to rfid_cc1101.o(i.RfidWriteReg) for RfidWriteReg
+    rfid_driver.o(i.WL_ReceiveData) refers to rfid_cc1101.o(i.RFID_GetFrame) for RFID_GetFrame
+    rfid_driver.o(i.WL_ReceiveData) refers to memmovea.o(.text) for __aeabi_memmove
+    rfid_driver.o(i.WL_ReceiveData) refers to usartapp.o(.data) for SC_RFID_ADDR
+    rfid_driver.o(i.WL_ReceiveData) refers to rfid_driver.o(.data) for ReciveRSSIData
+    rfid_driver.o(i.WL_SendData) refers to rfid_driver.o(i.RFID_SendData) for RFID_SendData
+    wireless.o(i.Wl_RxDataProc) refers to rfid_driver.o(i.WL_ReceiveData) for WL_ReceiveData
+    wireless.o(i.Wl_RxDataProc) refers to rfid_driver.o(i.RFID_Init) for RFID_Init
+    wireless.o(i.Wl_RxDataProc) refers to rfid_cc1101.o(i.RfidStrobe) for RfidStrobe
+    wireless.o(i.Wl_RxDataProc) refers to rfid_driver.o(i.GetRfidCurStatus) for GetRfidCurStatus
+    wireless.o(i.Wl_RxDataProc) refers to rfid_driver.o(i.SetRfidSRX) for SetRfidSRX
+    wireless.o(i.Wl_RxDataProc) refers to memseta.o(.text) for __aeabi_memclr4
+    wireless.o(i.Wl_RxDataProc) refers to memmovea.o(.text) for __aeabi_memcpy
+    wireless.o(i.Wl_RxDataProc) refers to usartapp.o(i.SendWirelesstData) for SendWirelesstData
+    wireless.o(i.Wl_RxDataProc) refers to wireless.o(.data) for RFID_Sleep
+    iapupdate.o(i.u16IapExFlashCrc) refers to iapupdate.o(i.u8InFlashReadBuf) for u8InFlashReadBuf
+    iapupdate.o(i.u16IapExFlashCrc) refers to iapupdate.o(.bss) for u8Buf
+    iapupdate.o(i.u16IapExFlashCrc) refers to iapupdate.o(.constdata) for u16Crc16tab
+    iapupdate.o(i.u16InFlashCrc) refers to iapupdate.o(.constdata) for u16Crc16tab
+    iapupdate.o(i.u32IapReadCodeLen) refers to iapupdate.o(i.u8InFlashReadBuf) for u8InFlashReadBuf
+    iapupdate.o(i.u32IapReadCrc) refers to iapupdate.o(i.u8InFlashReadBuf) for u8InFlashReadBuf
+    iapupdate.o(i.u32IapReadFlag) refers to iapupdate.o(i.u8InFlashReadBuf) for u8InFlashReadBuf
+    iapupdate.o(i.u8IapEraserBulk) refers to iapupdate.o(i.vInFlashErasePage) for vInFlashErasePage
+    iapupdate.o(i.u8IapEraserSector) refers to iapupdate.o(i.vInFlashErasePage) for vInFlashErasePage
+    iapupdate.o(i.u8IapGetPrgSize) refers to iapupdate.o(.constdata) for sDevPrgSize
+    iapupdate.o(i.u8IapGetPrgStorageAddr) refers to iapupdate.o(.constdata) for sDevPrgWriteBase
+    iapupdate.o(i.u8IapReadBuf) refers to iapupdate.o(i.u8InFlashReadBuf) for u8InFlashReadBuf
+    iapupdate.o(i.u8IapWriteBuf) refers to iapupdate.o(i.u8InFlashWriteBuf) for u8InFlashWriteBuf
+    iapupdate.o(i.u8InFlashWriteBuf) refers to gd32f1x0_fmc.o(i.fmc_unlock) for fmc_unlock
+    iapupdate.o(i.u8InFlashWriteBuf) refers to gd32f1x0_fmc.o(i.fmc_word_program) for fmc_word_program
+    iapupdate.o(i.u8InFlashWriteBuf) refers to gd32f1x0_fmc.o(i.fmc_flag_clear) for fmc_flag_clear
+    iapupdate.o(i.u8InFlashWriteBuf) refers to memseta.o(.text) for __aeabi_memset
+    iapupdate.o(i.u8InFlashWriteBuf) refers to memmovea.o(.text) for __aeabi_memcpy
+    iapupdate.o(i.u8InFlashWriteBuf) refers to gd32f1x0_fmc.o(i.fmc_lock) for fmc_lock
+    iapupdate.o(i.vCrc16Ccitt) refers to iapupdate.o(.constdata) for u16Crc16tab
+    iapupdate.o(i.vIapJumpToApp) refers to iapupdate.o(i.NVIC_DeInit) for NVIC_DeInit
+    iapupdate.o(i.vIapJumpToApp) refers to iapupdate.o(.data) for jumpToApp
+    iapupdate.o(i.vInFlashErasePage) refers to gd32f1x0_fmc.o(i.fmc_unlock) for fmc_unlock
+    iapupdate.o(i.vInFlashErasePage) refers to gd32f1x0_fmc.o(i.fmc_flag_clear) for fmc_flag_clear
+    iapupdate.o(i.vInFlashErasePage) refers to gd32f1x0_fmc.o(i.fmc_page_erase) for fmc_page_erase
+    iapupdate.o(i.vInFlashErasePage) refers to gd32f1x0_fmc.o(i.fmc_lock) for fmc_lock
+    system_gd32f1x0.o(i.SystemCoreClockUpdate) refers to system_gd32f1x0.o(.data) for SystemCoreClock
+    system_gd32f1x0.o(i.SystemInit) refers to system_gd32f1x0.o(i.system_clock_config) for system_clock_config
+    system_gd32f1x0.o(i.SystemInit) refers to gd32f1x0_misc.o(i.nvic_vector_table_set) for nvic_vector_table_set
+    system_gd32f1x0.o(i.system_clock_config) refers to system_gd32f1x0.o(i.system_clock_72m_hxtal) for system_clock_72m_hxtal
+    gd32f1x0_dma.o(i.dma_init) refers to gd32f1x0_dma.o(i.dma_channel_disable) for dma_channel_disable
+    gd32f1x0_gpio.o(i.gpio_deinit) refers to gd32f1x0_rcu.o(i.rcu_periph_reset_enable) for rcu_periph_reset_enable
+    gd32f1x0_gpio.o(i.gpio_deinit) refers to gd32f1x0_rcu.o(i.rcu_periph_reset_disable) for rcu_periph_reset_disable
+    gd32f1x0_spi.o(i.i2s_psc_config) refers to gd32f1x0_rcu.o(i.rcu_clock_freq_get) for rcu_clock_freq_get
+    gd32f1x0_spi.o(i.spi_i2s_deinit) refers to gd32f1x0_rcu.o(i.rcu_periph_reset_enable) for rcu_periph_reset_enable
+    gd32f1x0_spi.o(i.spi_i2s_deinit) refers to gd32f1x0_rcu.o(i.rcu_periph_reset_disable) for rcu_periph_reset_disable
+    gd32f1x0_syscfg.o(i.syscfg_deinit) refers to gd32f1x0_rcu.o(i.rcu_periph_reset_enable) for rcu_periph_reset_enable
+    gd32f1x0_syscfg.o(i.syscfg_deinit) refers to gd32f1x0_rcu.o(i.rcu_periph_reset_disable) for rcu_periph_reset_disable
+    gd32f1x0_timer.o(i.timer_deinit) refers to gd32f1x0_rcu.o(i.rcu_periph_reset_enable) for rcu_periph_reset_enable
+    gd32f1x0_timer.o(i.timer_deinit) refers to gd32f1x0_rcu.o(i.rcu_periph_reset_disable) for rcu_periph_reset_disable
+    gd32f1x0_timer.o(i.timer_external_clock_mode0_config) refers to gd32f1x0_timer.o(i.timer_external_trigger_config) for timer_external_trigger_config
+    gd32f1x0_timer.o(i.timer_external_clock_mode1_config) refers to gd32f1x0_timer.o(i.timer_external_trigger_config) for timer_external_trigger_config
+    gd32f1x0_timer.o(i.timer_external_trigger_as_external_clock_config) refers to gd32f1x0_timer.o(i.timer_input_trigger_source_select) for timer_input_trigger_source_select
+    gd32f1x0_timer.o(i.timer_input_capture_config) refers to gd32f1x0_timer.o(i.timer_channel_input_capture_prescaler_config) for timer_channel_input_capture_prescaler_config
+    gd32f1x0_timer.o(i.timer_input_pwm_capture_config) refers to gd32f1x0_timer.o(i.timer_channel_input_capture_prescaler_config) for timer_channel_input_capture_prescaler_config
+    gd32f1x0_timer.o(i.timer_internal_trigger_as_external_clock_config) refers to gd32f1x0_timer.o(i.timer_input_trigger_source_select) for timer_input_trigger_source_select
+    gd32f1x0_usart.o(i.usart_baudrate_set) refers to gd32f1x0_rcu.o(i.rcu_clock_freq_get) for rcu_clock_freq_get
+    gd32f1x0_usart.o(i.usart_deinit) refers to gd32f1x0_rcu.o(i.rcu_periph_reset_enable) for rcu_periph_reset_enable
+    gd32f1x0_usart.o(i.usart_deinit) refers to gd32f1x0_rcu.o(i.rcu_periph_reset_disable) for rcu_periph_reset_disable
+    gd32f1x0_wwdgt.o(i.wwdgt_deinit) refers to gd32f1x0_rcu.o(i.rcu_periph_reset_enable) for rcu_periph_reset_enable
+    gd32f1x0_wwdgt.o(i.wwdgt_deinit) refers to gd32f1x0_rcu.o(i.rcu_periph_reset_disable) for rcu_periph_reset_disable
+    gd32f1x0_misc.o(i.nvic_irq_enable) refers to gd32f1x0_misc.o(i.nvic_priority_group_set) for nvic_priority_group_set
+    gd32f1x0_rcu.o(i.rcu_osci_stab_wait) refers to gd32f1x0_rcu.o(i.rcu_flag_get) for rcu_flag_get
+    gd32f1x0_fmc.o(i.fmc_halfword_program) refers to gd32f1x0_fmc.o(i.fmc_ready_wait) for fmc_ready_wait
+    gd32f1x0_fmc.o(i.fmc_mass_erase) refers to gd32f1x0_fmc.o(i.fmc_ready_wait) for fmc_ready_wait
+    gd32f1x0_fmc.o(i.fmc_page_erase) refers to gd32f1x0_fmc.o(i.fmc_ready_wait) for fmc_ready_wait
+    gd32f1x0_fmc.o(i.fmc_ready_wait) refers to gd32f1x0_fmc.o(i.fmc_state_get) for fmc_state_get
+    gd32f1x0_fmc.o(i.fmc_word_program) refers to gd32f1x0_fmc.o(i.fmc_ready_wait) for fmc_ready_wait
+    gd32f1x0_fmc.o(i.ob_data_program) refers to gd32f1x0_fmc.o(i.ob_obstat_plevel_get) for ob_obstat_plevel_get
+    gd32f1x0_fmc.o(i.ob_data_program) refers to gd32f1x0_fmc.o(i.fmc_ready_wait) for fmc_ready_wait
+    gd32f1x0_fmc.o(i.ob_erase) refers to gd32f1x0_fmc.o(i.ob_obstat_plevel_get) for ob_obstat_plevel_get
+    gd32f1x0_fmc.o(i.ob_erase) refers to gd32f1x0_fmc.o(i.fmc_ready_wait) for fmc_ready_wait
+    gd32f1x0_fmc.o(i.ob_security_protection_config) refers to gd32f1x0_fmc.o(i.ob_obstat_plevel_get) for ob_obstat_plevel_get
+    gd32f1x0_fmc.o(i.ob_security_protection_config) refers to gd32f1x0_fmc.o(i.fmc_ready_wait) for fmc_ready_wait
+    gd32f1x0_fmc.o(i.ob_user_write) refers to gd32f1x0_fmc.o(i.ob_obstat_plevel_get) for ob_obstat_plevel_get
+    gd32f1x0_fmc.o(i.ob_user_write) refers to gd32f1x0_fmc.o(i.fmc_ready_wait) for fmc_ready_wait
+    gd32f1x0_fmc.o(i.ob_write_protection_enable) refers to gd32f1x0_fmc.o(i.ob_obstat_plevel_get) for ob_obstat_plevel_get
+    gd32f1x0_fmc.o(i.ob_write_protection_enable) refers to gd32f1x0_fmc.o(i.fmc_ready_wait) for fmc_ready_wait
+    startup_gd32f1x0.o(RESET) refers to startup_gd32f1x0.o(STACK) for __initial_sp
+    startup_gd32f1x0.o(RESET) refers to startup_gd32f1x0.o(.text) for Reset_Handler
+    startup_gd32f1x0.o(RESET) refers to gd32f1x0_it.o(i.NMI_Handler) for NMI_Handler
+    startup_gd32f1x0.o(RESET) refers to gd32f1x0_it.o(i.HardFault_Handler) for HardFault_Handler
+    startup_gd32f1x0.o(RESET) refers to gd32f1x0_it.o(i.MemManage_Handler) for MemManage_Handler
+    startup_gd32f1x0.o(RESET) refers to gd32f1x0_it.o(i.BusFault_Handler) for BusFault_Handler
+    startup_gd32f1x0.o(RESET) refers to gd32f1x0_it.o(i.UsageFault_Handler) for UsageFault_Handler
+    startup_gd32f1x0.o(RESET) refers to gd32f1x0_it.o(i.SVC_Handler) for SVC_Handler
+    startup_gd32f1x0.o(RESET) refers to gd32f1x0_it.o(i.DebugMon_Handler) for DebugMon_Handler
+    startup_gd32f1x0.o(RESET) refers to gd32f1x0_it.o(i.PendSV_Handler) for PendSV_Handler
+    startup_gd32f1x0.o(RESET) refers to gd32f1x0_it.o(i.SysTick_Handler) for SysTick_Handler
+    startup_gd32f1x0.o(RESET) refers to rfid_cc1101.o(i.EXTI0_1_IRQHandler) for EXTI0_1_IRQHandler
+    startup_gd32f1x0.o(RESET) refers to rfid_cc1101.o(i.EXTI4_15_IRQHandler) for EXTI4_15_IRQHandler
+    startup_gd32f1x0.o(RESET) refers to usart.o(i.USART0_IRQHandler) for USART0_IRQHandler
+    startup_gd32f1x0.o(.text) refers to system_gd32f1x0.o(i.SystemInit) for SystemInit
+    startup_gd32f1x0.o(.text) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry10a.o(.ARM.Collect$$$$0000000F) for __rt_final_cpp
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry11a.o(.ARM.Collect$$$$00000011) for __rt_final_exit
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry12b.o(.ARM.Collect$$$$0000000E) for __rt_lib_shutdown_fini
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry7b.o(.ARM.Collect$$$$00000008) for _main_clock
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry8b.o(.ARM.Collect$$$$0000000A) for _main_cpp_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry9a.o(.ARM.Collect$$$$0000000B) for _main_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry5.o(.ARM.Collect$$$$00000004) for _main_scatterload
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry2.o(.ARM.Collect$$$$00000001) for _main_stk
+    fmul.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    fdiv.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    fdiv.o(.text) refers to fepilogue.o(.text) for _float_round
+    ffltui.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    ffltui.o(.text) refers to fepilogue.o(.text) for _float_epilogue
+    ffixui.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    entry2.o(.ARM.Collect$$$$00000001) refers to entry2.o(.ARM.Collect$$$$00002712) for __lit__00000000
+    entry2.o(.ARM.Collect$$$$00002712) refers to startup_gd32f1x0.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to startup_gd32f1x0.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    entry5.o(.ARM.Collect$$$$00000004) refers to init.o(.text) for __scatterload
+    entry9a.o(.ARM.Collect$$$$0000000B) refers to main.o(i.main) for main
+    entry9b.o(.ARM.Collect$$$$0000000C) refers to main.o(i.main) for main
+    init.o(.text) refers to entry5.o(.ARM.Collect$$$$00000004) for __main_after_scatterload
+
+
+==============================================================================
+
+Removing Unused input sections from the image.
+
+    Removing main.o(.rev16_text), (4 bytes).
+    Removing main.o(.revsh_text), (4 bytes).
+    Removing main.o(.rrx_text), (6 bytes).
+    Removing gd32f1x0_it.o(.rev16_text), (4 bytes).
+    Removing gd32f1x0_it.o(.revsh_text), (4 bytes).
+    Removing gd32f1x0_it.o(.rrx_text), (6 bytes).
+    Removing systick.o(.rev16_text), (4 bytes).
+    Removing systick.o(.revsh_text), (4 bytes).
+    Removing systick.o(.rrx_text), (6 bytes).
+    Removing systick.o(i.delay_1ms), (96 bytes).
+    Removing systick.o(i.systick_config), (120 bytes).
+    Removing usart.o(.rev16_text), (4 bytes).
+    Removing usart.o(.revsh_text), (4 bytes).
+    Removing usart.o(.rrx_text), (6 bytes).
+    Removing usart.o(i.UsartFetchData), (96 bytes).
+    Removing usart.o(i.dma_config), (196 bytes).
+    Removing usart.o(i.gpio_init), (112 bytes).
+    Removing usart.o(i.usart_dma_send), (64 bytes).
+    Removing usart.o(i.usart_init), (172 bytes).
+    Removing usartapp.o(.rev16_text), (4 bytes).
+    Removing usartapp.o(.revsh_text), (4 bytes).
+    Removing usartapp.o(.rrx_text), (6 bytes).
+    Removing usartapp.o(i.FunctionSet), (2 bytes).
+    Removing usartapp.o(i.GetSetInformationData), (46 bytes).
+    Removing usartapp.o(i.GetSetdata), (88 bytes).
+    Removing usartapp.o(i.GetWirelesstData), (54 bytes).
+    Removing usartapp.o(i.ReUpdata), (40 bytes).
+    Removing usartapp.o(i.RecvUsartDataProc), (160 bytes).
+    Removing usartapp.o(i.SendHeartBeatData), (128 bytes).
+    Removing usartapp.o(i.SendStartData), (40 bytes).
+    Removing usartapp.o(i.SendUsartDataProc), (152 bytes).
+    Removing usartapp.o(i.TimeFun), (52 bytes).
+    Removing usartapp.o(i.UpdataInit), (60 bytes).
+    Removing usartapp.o(i.UsartRecvProgProc), (940 bytes).
+    Removing usartapp.o(i.timeoverset), (12 bytes).
+    Removing rfid_cc1101.o(.rev16_text), (4 bytes).
+    Removing rfid_cc1101.o(.revsh_text), (4 bytes).
+    Removing rfid_cc1101.o(.rrx_text), (6 bytes).
+    Removing rfid_cc1101.o(i.ClrRxFifo), (16 bytes).
+    Removing rfid_cc1101.o(i.RFCtrlSetIDLE), (46 bytes).
+    Removing rfid_cc1101.o(i.RFTxSendPacket), (240 bytes).
+    Removing rfid_cc1101.o(i.RfidReadAllStatusReg), (38 bytes).
+    Removing rfid_cc1101.o(i.RfidWORRegInit), (164 bytes).
+    Removing rfid_cc1101.o(i.RfidWriteFifo), (18 bytes).
+    Removing rfid_cc1101.o(i.SetRFChipIdle), (82 bytes).
+    Removing rfid_cc1101.o(i.SetRFChipSleep), (14 bytes).
+    Removing rfid_cc1101.o(i.SetRFChipSleepMode), (64 bytes).
+    Removing rfid_cc1101.o(i.SetRFChipWOR), (20 bytes).
+    Removing rfid_driver.o(.rev16_text), (4 bytes).
+    Removing rfid_driver.o(.revsh_text), (4 bytes).
+    Removing rfid_driver.o(.rrx_text), (6 bytes).
+    Removing rfid_driver.o(i.GetRfidSendEnable), (24 bytes).
+    Removing rfid_driver.o(i.RFID_FetchData), (12 bytes).
+    Removing rfid_driver.o(i.RFID_SendData), (72 bytes).
+    Removing rfid_driver.o(i.SetRcvedBackCallFunc), (12 bytes).
+    Removing rfid_driver.o(i.SetRfidSIDLE), (8 bytes).
+    Removing rfid_driver.o(i.SetRxAddrFilter), (18 bytes).
+    Removing rfid_driver.o(i.WL_SendData), (30 bytes).
+    Removing rfid_driver.o(i.WlEmitEnabled), (4 bytes).
+    Removing wireless.o(.rev16_text), (4 bytes).
+    Removing wireless.o(.revsh_text), (4 bytes).
+    Removing wireless.o(.rrx_text), (6 bytes).
+    Removing iapupdate.o(.rev16_text), (4 bytes).
+    Removing iapupdate.o(.revsh_text), (4 bytes).
+    Removing iapupdate.o(.rrx_text), (6 bytes).
+    Removing iapupdate.o(i.u16IapExFlashCrc), (112 bytes).
+    Removing iapupdate.o(i.u16InFlashCrc), (48 bytes).
+    Removing iapupdate.o(i.u32IapReadCodeLen), (22 bytes).
+    Removing iapupdate.o(i.u32IapReadCrc), (22 bytes).
+    Removing iapupdate.o(i.u32IapReadFlag), (22 bytes).
+    Removing iapupdate.o(i.u8IapEraserBulk), (20 bytes).
+    Removing iapupdate.o(i.u8IapGetPrgSize), (76 bytes).
+    Removing iapupdate.o(i.u8IapGetPrgStorageAddr), (76 bytes).
+    Removing iapupdate.o(i.vCrc16Ccitt), (48 bytes).
+    Removing iapupdate.o(i.vDelay), (30 bytes).
+    Removing iapupdate.o(i.vIapJumpToBoot), (96 bytes).
+    Removing iapupdate.o(.bss), (32 bytes).
+    Removing iapupdate.o(.constdata), (1008 bytes).
+    Removing system_gd32f1x0.o(.rev16_text), (4 bytes).
+    Removing system_gd32f1x0.o(.revsh_text), (4 bytes).
+    Removing system_gd32f1x0.o(.rrx_text), (6 bytes).
+    Removing system_gd32f1x0.o(i.SystemCoreClockUpdate), (240 bytes).
+    Removing system_gd32f1x0.o(.data), (4 bytes).
+    Removing gd32f1x0_dma.o(.rev16_text), (4 bytes).
+    Removing gd32f1x0_dma.o(.revsh_text), (4 bytes).
+    Removing gd32f1x0_dma.o(.rrx_text), (6 bytes).
+    Removing gd32f1x0_dma.o(i.dma_circulation_disable), (36 bytes).
+    Removing gd32f1x0_dma.o(i.dma_circulation_enable), (36 bytes).
+    Removing gd32f1x0_dma.o(i.dma_deinit), (92 bytes).
+    Removing gd32f1x0_dma.o(i.dma_flag_clear), (24 bytes).
+    Removing gd32f1x0_dma.o(i.dma_flag_get), (32 bytes).
+    Removing gd32f1x0_dma.o(i.dma_init), (284 bytes).
+    Removing gd32f1x0_dma.o(i.dma_interrupt_disable), (36 bytes).
+    Removing gd32f1x0_dma.o(i.dma_interrupt_enable), (36 bytes).
+    Removing gd32f1x0_dma.o(i.dma_interrupt_flag_clear), (24 bytes).
+    Removing gd32f1x0_dma.o(i.dma_interrupt_flag_get), (140 bytes).
+    Removing gd32f1x0_dma.o(i.dma_memory_increase_disable), (36 bytes).
+    Removing gd32f1x0_dma.o(i.dma_memory_increase_enable), (36 bytes).
+    Removing gd32f1x0_dma.o(i.dma_memory_to_memory_disable), (36 bytes).
+    Removing gd32f1x0_dma.o(i.dma_memory_to_memory_enable), (36 bytes).
+    Removing gd32f1x0_dma.o(i.dma_memory_width_config), (40 bytes).
+    Removing gd32f1x0_dma.o(i.dma_periph_address_config), (20 bytes).
+    Removing gd32f1x0_dma.o(i.dma_periph_increase_disable), (36 bytes).
+    Removing gd32f1x0_dma.o(i.dma_periph_increase_enable), (36 bytes).
+    Removing gd32f1x0_dma.o(i.dma_periph_width_config), (40 bytes).
+    Removing gd32f1x0_dma.o(i.dma_priority_config), (40 bytes).
+    Removing gd32f1x0_dma.o(i.dma_struct_para_init), (22 bytes).
+    Removing gd32f1x0_dma.o(i.dma_transfer_direction_config), (68 bytes).
+    Removing gd32f1x0_dma.o(i.dma_transfer_number_get), (20 bytes).
+    Removing gd32f1x0_exti.o(.rev16_text), (4 bytes).
+    Removing gd32f1x0_exti.o(.revsh_text), (4 bytes).
+    Removing gd32f1x0_exti.o(.rrx_text), (6 bytes).
+    Removing gd32f1x0_exti.o(i.exti_deinit), (32 bytes).
+    Removing gd32f1x0_exti.o(i.exti_event_disable), (16 bytes).
+    Removing gd32f1x0_exti.o(i.exti_event_enable), (16 bytes).
+    Removing gd32f1x0_exti.o(i.exti_flag_clear), (12 bytes).
+    Removing gd32f1x0_exti.o(i.exti_flag_get), (24 bytes).
+    Removing gd32f1x0_exti.o(i.exti_interrupt_disable), (16 bytes).
+    Removing gd32f1x0_exti.o(i.exti_interrupt_enable), (16 bytes).
+    Removing gd32f1x0_exti.o(i.exti_software_interrupt_disable), (16 bytes).
+    Removing gd32f1x0_exti.o(i.exti_software_interrupt_enable), (16 bytes).
+    Removing gd32f1x0_gpio.o(.rev16_text), (4 bytes).
+    Removing gd32f1x0_gpio.o(.revsh_text), (4 bytes).
+    Removing gd32f1x0_gpio.o(.rrx_text), (6 bytes).
+    Removing gd32f1x0_gpio.o(i.gpio_bit_write), (10 bytes).
+    Removing gd32f1x0_gpio.o(i.gpio_deinit), (148 bytes).
+    Removing gd32f1x0_gpio.o(i.gpio_input_bit_get), (16 bytes).
+    Removing gd32f1x0_gpio.o(i.gpio_input_port_get), (8 bytes).
+    Removing gd32f1x0_gpio.o(i.gpio_output_port_get), (8 bytes).
+    Removing gd32f1x0_gpio.o(i.gpio_pin_lock), (18 bytes).
+    Removing gd32f1x0_gpio.o(i.gpio_port_write), (4 bytes).
+    Removing gd32f1x0_spi.o(.rev16_text), (4 bytes).
+    Removing gd32f1x0_spi.o(.revsh_text), (4 bytes).
+    Removing gd32f1x0_spi.o(.rrx_text), (6 bytes).
+    Removing gd32f1x0_spi.o(i.i2s_disable), (10 bytes).
+    Removing gd32f1x0_spi.o(i.i2s_enable), (10 bytes).
+    Removing gd32f1x0_spi.o(i.i2s_init), (28 bytes).
+    Removing gd32f1x0_spi.o(i.i2s_psc_config), (164 bytes).
+    Removing gd32f1x0_spi.o(i.spi_bidirectional_transfer_config), (26 bytes).
+    Removing gd32f1x0_spi.o(i.spi_crc_error_clear), (10 bytes).
+    Removing gd32f1x0_spi.o(i.spi_crc_get), (16 bytes).
+    Removing gd32f1x0_spi.o(i.spi_crc_next), (10 bytes).
+    Removing gd32f1x0_spi.o(i.spi_crc_off), (10 bytes).
+    Removing gd32f1x0_spi.o(i.spi_crc_on), (10 bytes).
+    Removing gd32f1x0_spi.o(i.spi_crc_polynomial_get), (8 bytes).
+    Removing gd32f1x0_spi.o(i.spi_disable), (10 bytes).
+    Removing gd32f1x0_spi.o(i.spi_dma_disable), (22 bytes).
+    Removing gd32f1x0_spi.o(i.spi_dma_enable), (22 bytes).
+    Removing gd32f1x0_spi.o(i.spi_i2s_data_frame_format_config), (16 bytes).
+    Removing gd32f1x0_spi.o(i.spi_i2s_interrupt_disable), (48 bytes).
+    Removing gd32f1x0_spi.o(i.spi_i2s_interrupt_enable), (48 bytes).
+    Removing gd32f1x0_spi.o(i.spi_i2s_interrupt_flag_get), (100 bytes).
+    Removing gd32f1x0_spi.o(i.spi_nss_internal_high), (10 bytes).
+    Removing gd32f1x0_spi.o(i.spi_nss_internal_low), (10 bytes).
+    Removing gd32f1x0_spi.o(i.spi_nss_output_disable), (10 bytes).
+    Removing gd32f1x0_spi.o(i.spi_nss_output_enable), (10 bytes).
+    Removing gd32f1x0_syscfg.o(.rev16_text), (4 bytes).
+    Removing gd32f1x0_syscfg.o(.revsh_text), (4 bytes).
+    Removing gd32f1x0_syscfg.o(.rrx_text), (6 bytes).
+    Removing gd32f1x0_syscfg.o(i.syscfg_deinit), (20 bytes).
+    Removing gd32f1x0_syscfg.o(i.syscfg_dma_remap_disable), (16 bytes).
+    Removing gd32f1x0_syscfg.o(i.syscfg_dma_remap_enable), (16 bytes).
+    Removing gd32f1x0_syscfg.o(i.syscfg_flag_clear), (16 bytes).
+    Removing gd32f1x0_syscfg.o(i.syscfg_flag_get), (24 bytes).
+    Removing gd32f1x0_syscfg.o(i.syscfg_high_current_disable), (20 bytes).
+    Removing gd32f1x0_syscfg.o(i.syscfg_high_current_enable), (20 bytes).
+    Removing gd32f1x0_syscfg.o(i.syscfg_lock_config), (16 bytes).
+    Removing gd32f1x0_timer.o(.rev16_text), (4 bytes).
+    Removing gd32f1x0_timer.o(.revsh_text), (4 bytes).
+    Removing gd32f1x0_timer.o(.rrx_text), (6 bytes).
+    Removing gd32f1x0_timer.o(i.timer_auto_reload_shadow_disable), (10 bytes).
+    Removing gd32f1x0_timer.o(i.timer_auto_reload_shadow_enable), (10 bytes).
+    Removing gd32f1x0_timer.o(i.timer_automatic_output_disable), (10 bytes).
+    Removing gd32f1x0_timer.o(i.timer_automatic_output_enable), (10 bytes).
+    Removing gd32f1x0_timer.o(i.timer_autoreload_value_config), (4 bytes).
+    Removing gd32f1x0_timer.o(i.timer_break_config), (30 bytes).
+    Removing gd32f1x0_timer.o(i.timer_break_disable), (10 bytes).
+    Removing gd32f1x0_timer.o(i.timer_break_enable), (10 bytes).
+    Removing gd32f1x0_timer.o(i.timer_break_struct_para_init), (18 bytes).
+    Removing gd32f1x0_timer.o(i.timer_channel_capture_value_register_read), (42 bytes).
+    Removing gd32f1x0_timer.o(i.timer_channel_complementary_output_polarity_config), (92 bytes).
+    Removing gd32f1x0_timer.o(i.timer_channel_complementary_output_state_config), (70 bytes).
+    Removing gd32f1x0_timer.o(i.timer_channel_control_shadow_config), (24 bytes).
+    Removing gd32f1x0_timer.o(i.timer_channel_control_shadow_update_config), (26 bytes).
+    Removing gd32f1x0_timer.o(i.timer_channel_dma_request_source_select), (26 bytes).
+    Removing gd32f1x0_timer.o(i.timer_channel_input_capture_prescaler_config), (90 bytes).
+    Removing gd32f1x0_timer.o(i.timer_channel_input_struct_para_init), (16 bytes).
+    Removing gd32f1x0_timer.o(i.timer_channel_output_clear_config), (90 bytes).
+    Removing gd32f1x0_timer.o(i.timer_channel_output_config), (520 bytes).
+    Removing gd32f1x0_timer.o(i.timer_channel_output_fast_config), (90 bytes).
+    Removing gd32f1x0_timer.o(i.timer_channel_output_mode_config), (90 bytes).
+    Removing gd32f1x0_timer.o(i.timer_channel_output_polarity_config), (92 bytes).
+    Removing gd32f1x0_timer.o(i.timer_channel_output_pulse_value_config), (38 bytes).
+    Removing gd32f1x0_timer.o(i.timer_channel_output_shadow_config), (90 bytes).
+    Removing gd32f1x0_timer.o(i.timer_channel_output_state_config), (92 bytes).
+    Removing gd32f1x0_timer.o(i.timer_channel_output_struct_para_init), (16 bytes).
+    Removing gd32f1x0_timer.o(i.timer_channel_remap_config), (4 bytes).
+    Removing gd32f1x0_timer.o(i.timer_counter_alignment), (16 bytes).
+    Removing gd32f1x0_timer.o(i.timer_counter_down_direction), (10 bytes).
+    Removing gd32f1x0_timer.o(i.timer_counter_read), (8 bytes).
+    Removing gd32f1x0_timer.o(i.timer_counter_up_direction), (10 bytes).
+    Removing gd32f1x0_timer.o(i.timer_counter_value_config), (4 bytes).
+    Removing gd32f1x0_timer.o(i.timer_deinit), (220 bytes).
+    Removing gd32f1x0_timer.o(i.timer_disable), (10 bytes).
+    Removing gd32f1x0_timer.o(i.timer_dma_disable), (8 bytes).
+    Removing gd32f1x0_timer.o(i.timer_dma_enable), (8 bytes).
+    Removing gd32f1x0_timer.o(i.timer_dma_transfer_config), (24 bytes).
+    Removing gd32f1x0_timer.o(i.timer_enable), (10 bytes).
+    Removing gd32f1x0_timer.o(i.timer_event_software_generate), (8 bytes).
+    Removing gd32f1x0_timer.o(i.timer_external_clock_mode0_config), (40 bytes).
+    Removing gd32f1x0_timer.o(i.timer_external_clock_mode1_config), (32 bytes).
+    Removing gd32f1x0_timer.o(i.timer_external_clock_mode1_disable), (10 bytes).
+    Removing gd32f1x0_timer.o(i.timer_external_trigger_as_external_clock_config), (166 bytes).
+    Removing gd32f1x0_timer.o(i.timer_external_trigger_config), (30 bytes).
+    Removing gd32f1x0_timer.o(i.timer_flag_clear), (6 bytes).
+    Removing gd32f1x0_timer.o(i.timer_flag_get), (16 bytes).
+    Removing gd32f1x0_timer.o(i.timer_hall_mode_config), (26 bytes).
+    Removing gd32f1x0_timer.o(i.timer_init), (172 bytes).
+    Removing gd32f1x0_timer.o(i.timer_input_capture_config), (326 bytes).
+    Removing gd32f1x0_timer.o(i.timer_input_pwm_capture_config), (356 bytes).
+    Removing gd32f1x0_timer.o(i.timer_input_trigger_source_select), (16 bytes).
+    Removing gd32f1x0_timer.o(i.timer_internal_clock_config), (10 bytes).
+    Removing gd32f1x0_timer.o(i.timer_internal_trigger_as_external_clock_config), (32 bytes).
+    Removing gd32f1x0_timer.o(i.timer_interrupt_disable), (8 bytes).
+    Removing gd32f1x0_timer.o(i.timer_interrupt_enable), (8 bytes).
+    Removing gd32f1x0_timer.o(i.timer_interrupt_flag_clear), (6 bytes).
+    Removing gd32f1x0_timer.o(i.timer_interrupt_flag_get), (24 bytes).
+    Removing gd32f1x0_timer.o(i.timer_master_output_trigger_source_select), (16 bytes).
+    Removing gd32f1x0_timer.o(i.timer_master_slave_mode_config), (26 bytes).
+    Removing gd32f1x0_timer.o(i.timer_ocpre_clear_source_config), (26 bytes).
+    Removing gd32f1x0_timer.o(i.timer_prescaler_config), (14 bytes).
+    Removing gd32f1x0_timer.o(i.timer_prescaler_read), (10 bytes).
+    Removing gd32f1x0_timer.o(i.timer_primary_output_config), (24 bytes).
+    Removing gd32f1x0_timer.o(i.timer_quadrature_decoder_mode_config), (64 bytes).
+    Removing gd32f1x0_timer.o(i.timer_repetition_value_config), (4 bytes).
+    Removing gd32f1x0_timer.o(i.timer_single_pulse_mode_config), (26 bytes).
+    Removing gd32f1x0_timer.o(i.timer_slave_mode_select), (16 bytes).
+    Removing gd32f1x0_timer.o(i.timer_struct_para_init), (22 bytes).
+    Removing gd32f1x0_timer.o(i.timer_update_event_disable), (10 bytes).
+    Removing gd32f1x0_timer.o(i.timer_update_event_enable), (10 bytes).
+    Removing gd32f1x0_timer.o(i.timer_update_source_config), (26 bytes).
+    Removing gd32f1x0_usart.o(.rev16_text), (4 bytes).
+    Removing gd32f1x0_usart.o(.revsh_text), (4 bytes).
+    Removing gd32f1x0_usart.o(.rrx_text), (6 bytes).
+    Removing gd32f1x0_usart.o(i.usart_address_config), (32 bytes).
+    Removing gd32f1x0_usart.o(i.usart_address_detection_mode_config), (28 bytes).
+    Removing gd32f1x0_usart.o(i.usart_autobaud_detection_disable), (10 bytes).
+    Removing gd32f1x0_usart.o(i.usart_autobaud_detection_enable), (10 bytes).
+    Removing gd32f1x0_usart.o(i.usart_autobaud_detection_mode_config), (16 bytes).
+    Removing gd32f1x0_usart.o(i.usart_baudrate_set), (124 bytes).
+    Removing gd32f1x0_usart.o(i.usart_block_length_config), (24 bytes).
+    Removing gd32f1x0_usart.o(i.usart_clock_disable), (18 bytes).
+    Removing gd32f1x0_usart.o(i.usart_clock_enable), (18 bytes).
+    Removing gd32f1x0_usart.o(i.usart_command_enable), (8 bytes).
+    Removing gd32f1x0_usart.o(i.usart_data_first_config), (28 bytes).
+    Removing gd32f1x0_usart.o(i.usart_data_transmit), (8 bytes).
+    Removing gd32f1x0_usart.o(i.usart_deinit), (64 bytes).
+    Removing gd32f1x0_usart.o(i.usart_depolarity_config), (28 bytes).
+    Removing gd32f1x0_usart.o(i.usart_disable), (10 bytes).
+    Removing gd32f1x0_usart.o(i.usart_dma_receive_config), (16 bytes).
+    Removing gd32f1x0_usart.o(i.usart_dma_transmit_config), (16 bytes).
+    Removing gd32f1x0_usart.o(i.usart_driver_assertime_config), (32 bytes).
+    Removing gd32f1x0_usart.o(i.usart_driver_deassertime_config), (32 bytes).
+    Removing gd32f1x0_usart.o(i.usart_enable), (10 bytes).
+    Removing gd32f1x0_usart.o(i.usart_flag_clear), (18 bytes).
+    Removing gd32f1x0_usart.o(i.usart_guard_time_config), (32 bytes).
+    Removing gd32f1x0_usart.o(i.usart_halfduplex_disable), (18 bytes).
+    Removing gd32f1x0_usart.o(i.usart_halfduplex_enable), (18 bytes).
+    Removing gd32f1x0_usart.o(i.usart_hardware_flow_cts_config), (24 bytes).
+    Removing gd32f1x0_usart.o(i.usart_hardware_flow_rts_config), (24 bytes).
+    Removing gd32f1x0_usart.o(i.usart_interrupt_disable), (26 bytes).
+    Removing gd32f1x0_usart.o(i.usart_interrupt_enable), (26 bytes).
+    Removing gd32f1x0_usart.o(i.usart_interrupt_flag_get), (56 bytes).
+    Removing gd32f1x0_usart.o(i.usart_invert_config), (110 bytes).
+    Removing gd32f1x0_usart.o(i.usart_irda_lowpower_config), (28 bytes).
+    Removing gd32f1x0_usart.o(i.usart_irda_mode_disable), (18 bytes).
+    Removing gd32f1x0_usart.o(i.usart_irda_mode_enable), (18 bytes).
+    Removing gd32f1x0_usart.o(i.usart_lin_break_detection_length_config), (28 bytes).
+    Removing gd32f1x0_usart.o(i.usart_lin_mode_disable), (18 bytes).
+    Removing gd32f1x0_usart.o(i.usart_lin_mode_enable), (18 bytes).
+    Removing gd32f1x0_usart.o(i.usart_mute_mode_disable), (10 bytes).
+    Removing gd32f1x0_usart.o(i.usart_mute_mode_enable), (10 bytes).
+    Removing gd32f1x0_usart.o(i.usart_mute_mode_wakeup_config), (24 bytes).
+    Removing gd32f1x0_usart.o(i.usart_overrun_disable), (18 bytes).
+    Removing gd32f1x0_usart.o(i.usart_overrun_enable), (18 bytes).
+    Removing gd32f1x0_usart.o(i.usart_oversample_config), (24 bytes).
+    Removing gd32f1x0_usart.o(i.usart_parity_config), (24 bytes).
+    Removing gd32f1x0_usart.o(i.usart_prescaler_config), (24 bytes).
+    Removing gd32f1x0_usart.o(i.usart_receive_config), (16 bytes).
+    Removing gd32f1x0_usart.o(i.usart_receiver_timeout_disable), (10 bytes).
+    Removing gd32f1x0_usart.o(i.usart_receiver_timeout_enable), (10 bytes).
+    Removing gd32f1x0_usart.o(i.usart_receiver_timeout_threshold_config), (16 bytes).
+    Removing gd32f1x0_usart.o(i.usart_reception_error_dma_disable), (18 bytes).
+    Removing gd32f1x0_usart.o(i.usart_reception_error_dma_enable), (18 bytes).
+    Removing gd32f1x0_usart.o(i.usart_rs485_driver_disable), (18 bytes).
+    Removing gd32f1x0_usart.o(i.usart_rs485_driver_enable), (18 bytes).
+    Removing gd32f1x0_usart.o(i.usart_sample_bit_config), (24 bytes).
+    Removing gd32f1x0_usart.o(i.usart_smartcard_autoretry_config), (32 bytes).
+    Removing gd32f1x0_usart.o(i.usart_smartcard_mode_disable), (18 bytes).
+    Removing gd32f1x0_usart.o(i.usart_smartcard_mode_enable), (18 bytes).
+    Removing gd32f1x0_usart.o(i.usart_smartcard_mode_nack_disable), (18 bytes).
+    Removing gd32f1x0_usart.o(i.usart_smartcard_mode_nack_enable), (18 bytes).
+    Removing gd32f1x0_usart.o(i.usart_stop_bit_set), (24 bytes).
+    Removing gd32f1x0_usart.o(i.usart_synchronous_clock_config), (50 bytes).
+    Removing gd32f1x0_usart.o(i.usart_transmit_config), (16 bytes).
+    Removing gd32f1x0_usart.o(i.usart_wakeup_disable), (10 bytes).
+    Removing gd32f1x0_usart.o(i.usart_wakeup_enable), (10 bytes).
+    Removing gd32f1x0_usart.o(i.usart_wakeup_mode_config), (28 bytes).
+    Removing gd32f1x0_usart.o(i.usart_word_length_set), (24 bytes).
+    Removing gd32f1x0_wwdgt.o(.rev16_text), (4 bytes).
+    Removing gd32f1x0_wwdgt.o(.revsh_text), (4 bytes).
+    Removing gd32f1x0_wwdgt.o(.rrx_text), (6 bytes).
+    Removing gd32f1x0_wwdgt.o(i.wwdgt_config), (56 bytes).
+    Removing gd32f1x0_wwdgt.o(i.wwdgt_counter_update), (28 bytes).
+    Removing gd32f1x0_wwdgt.o(i.wwdgt_deinit), (20 bytes).
+    Removing gd32f1x0_wwdgt.o(i.wwdgt_enable), (20 bytes).
+    Removing gd32f1x0_wwdgt.o(i.wwdgt_flag_clear), (20 bytes).
+    Removing gd32f1x0_wwdgt.o(i.wwdgt_flag_get), (24 bytes).
+    Removing gd32f1x0_wwdgt.o(i.wwdgt_interrupt_enable), (20 bytes).
+    Removing gd32f1x0_misc.o(.rev16_text), (4 bytes).
+    Removing gd32f1x0_misc.o(.revsh_text), (4 bytes).
+    Removing gd32f1x0_misc.o(.rrx_text), (6 bytes).
+    Removing gd32f1x0_misc.o(i.nvic_irq_disable), (24 bytes).
+    Removing gd32f1x0_misc.o(i.system_lowpower_reset), (16 bytes).
+    Removing gd32f1x0_misc.o(i.system_lowpower_set), (16 bytes).
+    Removing gd32f1x0_misc.o(i.systick_clksource_set), (40 bytes).
+    Removing gd32f1x0_rcu.o(.rev16_text), (4 bytes).
+    Removing gd32f1x0_rcu.o(.revsh_text), (4 bytes).
+    Removing gd32f1x0_rcu.o(.rrx_text), (6 bytes).
+    Removing gd32f1x0_rcu.o(i.rcu_adc_clock_config), (152 bytes).
+    Removing gd32f1x0_rcu.o(i.rcu_ahb_clock_config), (28 bytes).
+    Removing gd32f1x0_rcu.o(i.rcu_all_reset_flag_clear), (20 bytes).
+    Removing gd32f1x0_rcu.o(i.rcu_apb1_clock_config), (28 bytes).
+    Removing gd32f1x0_rcu.o(i.rcu_apb2_clock_config), (28 bytes).
+    Removing gd32f1x0_rcu.o(i.rcu_bkp_reset_disable), (20 bytes).
+    Removing gd32f1x0_rcu.o(i.rcu_bkp_reset_enable), (20 bytes).
+    Removing gd32f1x0_rcu.o(i.rcu_cec_clock_config), (28 bytes).
+    Removing gd32f1x0_rcu.o(i.rcu_ckout_config), (28 bytes).
+    Removing gd32f1x0_rcu.o(i.rcu_clock_freq_get), (680 bytes).
+    Removing gd32f1x0_rcu.o(i.rcu_deepsleep_voltage_set), (36 bytes).
+    Removing gd32f1x0_rcu.o(i.rcu_deinit), (140 bytes).
+    Removing gd32f1x0_rcu.o(i.rcu_flag_get), (36 bytes).
+    Removing gd32f1x0_rcu.o(i.rcu_hxtal_clock_monitor_disable), (20 bytes).
+    Removing gd32f1x0_rcu.o(i.rcu_hxtal_clock_monitor_enable), (20 bytes).
+    Removing gd32f1x0_rcu.o(i.rcu_hxtal_prediv_config), (24 bytes).
+    Removing gd32f1x0_rcu.o(i.rcu_interrupt_disable), (16 bytes).
+    Removing gd32f1x0_rcu.o(i.rcu_interrupt_enable), (16 bytes).
+    Removing gd32f1x0_rcu.o(i.rcu_interrupt_flag_clear), (16 bytes).
+    Removing gd32f1x0_rcu.o(i.rcu_interrupt_flag_get), (24 bytes).
+    Removing gd32f1x0_rcu.o(i.rcu_irc14m_adjust_value_set), (24 bytes).
+    Removing gd32f1x0_rcu.o(i.rcu_irc8m_adjust_value_set), (24 bytes).
+    Removing gd32f1x0_rcu.o(i.rcu_lxtal_drive_capability_config), (28 bytes).
+    Removing gd32f1x0_rcu.o(i.rcu_osci_bypass_mode_disable), (100 bytes).
+    Removing gd32f1x0_rcu.o(i.rcu_osci_bypass_mode_enable), (100 bytes).
+    Removing gd32f1x0_rcu.o(i.rcu_osci_off), (32 bytes).
+    Removing gd32f1x0_rcu.o(i.rcu_osci_on), (32 bytes).
+    Removing gd32f1x0_rcu.o(i.rcu_osci_stab_wait), (268 bytes).
+    Removing gd32f1x0_rcu.o(i.rcu_periph_clock_disable), (32 bytes).
+    Removing gd32f1x0_rcu.o(i.rcu_periph_clock_sleep_disable), (32 bytes).
+    Removing gd32f1x0_rcu.o(i.rcu_periph_clock_sleep_enable), (32 bytes).
+    Removing gd32f1x0_rcu.o(i.rcu_pll_config), (36 bytes).
+    Removing gd32f1x0_rcu.o(i.rcu_power_down_voltage_set), (36 bytes).
+    Removing gd32f1x0_rcu.o(i.rcu_rtc_clock_config), (28 bytes).
+    Removing gd32f1x0_rcu.o(i.rcu_system_clock_source_config), (28 bytes).
+    Removing gd32f1x0_rcu.o(i.rcu_system_clock_source_get), (16 bytes).
+    Removing gd32f1x0_rcu.o(i.rcu_usart_clock_config), (28 bytes).
+    Removing gd32f1x0_rcu.o(i.rcu_usbd_clock_config), (28 bytes).
+    Removing gd32f1x0_rcu.o(i.rcu_voltage_key_unlock), (40 bytes).
+    Removing gd32f1x0_fmc.o(.rev16_text), (4 bytes).
+    Removing gd32f1x0_fmc.o(.revsh_text), (4 bytes).
+    Removing gd32f1x0_fmc.o(.rrx_text), (6 bytes).
+    Removing gd32f1x0_fmc.o(i.fmc_flag_get), (20 bytes).
+    Removing gd32f1x0_fmc.o(i.fmc_halfword_program), (64 bytes).
+    Removing gd32f1x0_fmc.o(i.fmc_interrupt_disable), (16 bytes).
+    Removing gd32f1x0_fmc.o(i.fmc_interrupt_enable), (16 bytes).
+    Removing gd32f1x0_fmc.o(i.fmc_interrupt_flag_clear), (12 bytes).
+    Removing gd32f1x0_fmc.o(i.fmc_interrupt_flag_get), (20 bytes).
+    Removing gd32f1x0_fmc.o(i.fmc_mass_erase), (68 bytes).
+    Removing gd32f1x0_fmc.o(i.fmc_wait_state_disable), (24 bytes).
+    Removing gd32f1x0_fmc.o(i.fmc_wait_state_enable), (24 bytes).
+    Removing gd32f1x0_fmc.o(i.fmc_wscnt_set), (24 bytes).
+    Removing gd32f1x0_fmc.o(i.ob_data_get), (12 bytes).
+    Removing gd32f1x0_fmc.o(i.ob_data_program), (212 bytes).
+    Removing gd32f1x0_fmc.o(i.ob_erase), (148 bytes).
+    Removing gd32f1x0_fmc.o(i.ob_lock), (20 bytes).
+    Removing gd32f1x0_fmc.o(i.ob_obstat_plevel_get), (16 bytes).
+    Removing gd32f1x0_fmc.o(i.ob_reset), (20 bytes).
+    Removing gd32f1x0_fmc.o(i.ob_security_protection_config), (204 bytes).
+    Removing gd32f1x0_fmc.o(i.ob_unlock), (36 bytes).
+    Removing gd32f1x0_fmc.o(i.ob_user_get), (16 bytes).
+    Removing gd32f1x0_fmc.o(i.ob_user_write), (208 bytes).
+    Removing gd32f1x0_fmc.o(i.ob_write_protection_enable), (216 bytes).
+    Removing gd32f1x0_fmc.o(i.ob_write_protection_get), (12 bytes).
+    Removing startup_gd32f1x0.o(HEAP), (1024 bytes).
+    Removing fdiv.o(.text), (124 bytes).
+
+395 unused section(s) (total 18276 bytes) removed from the image.
+
+==============================================================================
+
+Image Symbol Table
+
+    Local Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry12b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry12a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
+    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpyb.o ABSOLUTE
+    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpya.o ABSOLUTE
+    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memmovea.o ABSOLUTE
+    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memmoveb.o ABSOLUTE
+    ../clib/microlib/string/memset.c         0x00000000   Number         0  memseta.o ABSOLUTE
+    ../clib/microlib/stubs.s                 0x00000000   Number         0  iusefp.o ABSOLUTE
+    ../fplib/microlib/fpdiv.c                0x00000000   Number         0  fdiv.o ABSOLUTE
+    ../fplib/microlib/fpepilogue.c           0x00000000   Number         0  fepilogue.o ABSOLUTE
+    ../fplib/microlib/fpfix.c                0x00000000   Number         0  ffixui.o ABSOLUTE
+    ../fplib/microlib/fpflt.c                0x00000000   Number         0  ffltui.o ABSOLUTE
+    ../fplib/microlib/fpmul.c                0x00000000   Number         0  fmul.o ABSOLUTE
+    ..\..\Library\CMSIS\GD\GD32F1x0\Source\ARM\startup_gd32f1x0.s 0x00000000   Number         0  startup_gd32f1x0.o ABSOLUTE
+    ..\..\Library\CMSIS\GD\GD32F1x0\Source\system_gd32f1x0.c 0x00000000   Number         0  system_gd32f1x0.o ABSOLUTE
+    ..\..\Library\GD32F1x0_standard_peripheral\Source\gd32f1x0_dma.c 0x00000000   Number         0  gd32f1x0_dma.o ABSOLUTE
+    ..\..\Library\GD32F1x0_standard_peripheral\Source\gd32f1x0_exti.c 0x00000000   Number         0  gd32f1x0_exti.o ABSOLUTE
+    ..\..\Library\GD32F1x0_standard_peripheral\Source\gd32f1x0_fmc.c 0x00000000   Number         0  gd32f1x0_fmc.o ABSOLUTE
+    ..\..\Library\GD32F1x0_standard_peripheral\Source\gd32f1x0_gpio.c 0x00000000   Number         0  gd32f1x0_gpio.o ABSOLUTE
+    ..\..\Library\GD32F1x0_standard_peripheral\Source\gd32f1x0_misc.c 0x00000000   Number         0  gd32f1x0_misc.o ABSOLUTE
+    ..\..\Library\GD32F1x0_standard_peripheral\Source\gd32f1x0_rcu.c 0x00000000   Number         0  gd32f1x0_rcu.o ABSOLUTE
+    ..\..\Library\GD32F1x0_standard_peripheral\Source\gd32f1x0_spi.c 0x00000000   Number         0  gd32f1x0_spi.o ABSOLUTE
+    ..\..\Library\GD32F1x0_standard_peripheral\Source\gd32f1x0_syscfg.c 0x00000000   Number         0  gd32f1x0_syscfg.o ABSOLUTE
+    ..\..\Library\GD32F1x0_standard_peripheral\Source\gd32f1x0_timer.c 0x00000000   Number         0  gd32f1x0_timer.o ABSOLUTE
+    ..\..\Library\GD32F1x0_standard_peripheral\Source\gd32f1x0_usart.c 0x00000000   Number         0  gd32f1x0_usart.o ABSOLUTE
+    ..\..\Library\GD32F1x0_standard_peripheral\Source\gd32f1x0_wwdgt.c 0x00000000   Number         0  gd32f1x0_wwdgt.o ABSOLUTE
+    ..\\..\\Library\\CMSIS\\GD\\GD32F1x0\\Source\\system_gd32f1x0.c 0x00000000   Number         0  system_gd32f1x0.o ABSOLUTE
+    ..\\..\\Library\\GD32F1x0_standard_peripheral\\Source\\gd32f1x0_dma.c 0x00000000   Number         0  gd32f1x0_dma.o ABSOLUTE
+    ..\\..\\Library\\GD32F1x0_standard_peripheral\\Source\\gd32f1x0_exti.c 0x00000000   Number         0  gd32f1x0_exti.o ABSOLUTE
+    ..\\..\\Library\\GD32F1x0_standard_peripheral\\Source\\gd32f1x0_fmc.c 0x00000000   Number         0  gd32f1x0_fmc.o ABSOLUTE
+    ..\\..\\Library\\GD32F1x0_standard_peripheral\\Source\\gd32f1x0_gpio.c 0x00000000   Number         0  gd32f1x0_gpio.o ABSOLUTE
+    ..\\..\\Library\\GD32F1x0_standard_peripheral\\Source\\gd32f1x0_misc.c 0x00000000   Number         0  gd32f1x0_misc.o ABSOLUTE
+    ..\\..\\Library\\GD32F1x0_standard_peripheral\\Source\\gd32f1x0_rcu.c 0x00000000   Number         0  gd32f1x0_rcu.o ABSOLUTE
+    ..\\..\\Library\\GD32F1x0_standard_peripheral\\Source\\gd32f1x0_spi.c 0x00000000   Number         0  gd32f1x0_spi.o ABSOLUTE
+    ..\\..\\Library\\GD32F1x0_standard_peripheral\\Source\\gd32f1x0_syscfg.c 0x00000000   Number         0  gd32f1x0_syscfg.o ABSOLUTE
+    ..\\..\\Library\\GD32F1x0_standard_peripheral\\Source\\gd32f1x0_timer.c 0x00000000   Number         0  gd32f1x0_timer.o ABSOLUTE
+    ..\\..\\Library\\GD32F1x0_standard_peripheral\\Source\\gd32f1x0_usart.c 0x00000000   Number         0  gd32f1x0_usart.o ABSOLUTE
+    ..\\..\\Library\\GD32F1x0_standard_peripheral\\Source\\gd32f1x0_wwdgt.c 0x00000000   Number         0  gd32f1x0_wwdgt.o ABSOLUTE
+    dc.s                                     0x00000000   Number         0  dc.o ABSOLUTE
+    gd32f1x0_it.c                            0x00000000   Number         0  gd32f1x0_it.o ABSOLUTE
+    gd32f1x0_it.c                            0x00000000   Number         0  gd32f1x0_it.o ABSOLUTE
+    handlers.s                               0x00000000   Number         0  handlers.o ABSOLUTE
+    iapupdate.c                              0x00000000   Number         0  iapupdate.o ABSOLUTE
+    iapupdate.c                              0x00000000   Number         0  iapupdate.o ABSOLUTE
+    init.s                                   0x00000000   Number         0  init.o ABSOLUTE
+    main.c                                   0x00000000   Number         0  main.o ABSOLUTE
+    main.c                                   0x00000000   Number         0  main.o ABSOLUTE
+    rfid_cc1101.c                            0x00000000   Number         0  rfid_cc1101.o ABSOLUTE
+    rfid_cc1101.c                            0x00000000   Number         0  rfid_cc1101.o ABSOLUTE
+    rfid_driver.c                            0x00000000   Number         0  rfid_driver.o ABSOLUTE
+    rfid_driver.c                            0x00000000   Number         0  rfid_driver.o ABSOLUTE
+    systick.c                                0x00000000   Number         0  systick.o ABSOLUTE
+    systick.c                                0x00000000   Number         0  systick.o ABSOLUTE
+    usart.c                                  0x00000000   Number         0  usart.o ABSOLUTE
+    usart.c                                  0x00000000   Number         0  usart.o ABSOLUTE
+    usartapp.c                               0x00000000   Number         0  usartapp.o ABSOLUTE
+    usartapp.c                               0x00000000   Number         0  usartapp.o ABSOLUTE
+    wireless.c                               0x00000000   Number         0  wireless.o ABSOLUTE
+    wireless.c                               0x00000000   Number         0  wireless.o ABSOLUTE
+    RESET                                    0x08000000   Section      360  startup_gd32f1x0.o(RESET)
+    .ARM.Collect$$$$00000000                 0x08000168   Section        0  entry.o(.ARM.Collect$$$$00000000)
+    .ARM.Collect$$$$00000001                 0x08000168   Section        4  entry2.o(.ARM.Collect$$$$00000001)
+    .ARM.Collect$$$$00000004                 0x0800016c   Section        4  entry5.o(.ARM.Collect$$$$00000004)
+    .ARM.Collect$$$$00000008                 0x08000170   Section        0  entry7b.o(.ARM.Collect$$$$00000008)
+    .ARM.Collect$$$$0000000A                 0x08000170   Section        0  entry8b.o(.ARM.Collect$$$$0000000A)
+    .ARM.Collect$$$$0000000B                 0x08000170   Section        8  entry9a.o(.ARM.Collect$$$$0000000B)
+    .ARM.Collect$$$$0000000E                 0x08000178   Section        4  entry12b.o(.ARM.Collect$$$$0000000E)
+    .ARM.Collect$$$$0000000F                 0x0800017c   Section        0  entry10a.o(.ARM.Collect$$$$0000000F)
+    .ARM.Collect$$$$00000011                 0x0800017c   Section        0  entry11a.o(.ARM.Collect$$$$00000011)
+    .ARM.Collect$$$$00002712                 0x0800017c   Section        4  entry2.o(.ARM.Collect$$$$00002712)
+    __lit__00000000                          0x0800017c   Data           4  entry2.o(.ARM.Collect$$$$00002712)
+    .text                                    0x08000180   Section       36  startup_gd32f1x0.o(.text)
+    .text                                    0x080001a4   Section        0  memmovea.o(.text)
+    .text                                    0x080001e4   Section        0  memseta.o(.text)
+    .text                                    0x08000208   Section        0  fmul.o(.text)
+    .text                                    0x0800026c   Section        0  ffltui.o(.text)
+    .text                                    0x08000276   Section        0  ffixui.o(.text)
+    .text                                    0x0800029e   Section        0  iusefp.o(.text)
+    .text                                    0x0800029e   Section        0  fepilogue.o(.text)
+    .text                                    0x0800030c   Section       36  init.o(.text)
+    i.BusFault_Handler                       0x08000330   Section        0  gd32f1x0_it.o(i.BusFault_Handler)
+    i.Crc16UsartReceiveChick                 0x08000334   Section        0  usart.o(i.Crc16UsartReceiveChick)
+    i.DebugMon_Handler                       0x08000364   Section        0  gd32f1x0_it.o(i.DebugMon_Handler)
+    i.EXTI0_1_IRQHandler                     0x08000368   Section        0  rfid_cc1101.o(i.EXTI0_1_IRQHandler)
+    i.EXTI4_15_IRQHandler                    0x080003bc   Section        0  rfid_cc1101.o(i.EXTI4_15_IRQHandler)
+    i.GetRfidCurStatus                       0x08000490   Section        0  rfid_driver.o(i.GetRfidCurStatus)
+    i.HardFault_Handler                      0x08000498   Section        0  gd32f1x0_it.o(i.HardFault_Handler)
+    i.InsUsartTrsQueue                       0x0800049c   Section        0  usartapp.o(i.InsUsartTrsQueue)
+    InsUsartTrsQueue                         0x0800049d   Thumb Code   282  usartapp.o(i.InsUsartTrsQueue)
+    i.MemManage_Handler                      0x080005cc   Section        0  gd32f1x0_it.o(i.MemManage_Handler)
+    i.NMI_Handler                            0x080005d0   Section        0  gd32f1x0_it.o(i.NMI_Handler)
+    i.NVIC_DeInit                            0x080005d4   Section        0  iapupdate.o(i.NVIC_DeInit)
+    i.PendSV_Handler                         0x08000614   Section        0  gd32f1x0_it.o(i.PendSV_Handler)
+    i.RFID_GetFrame                          0x08000618   Section        0  rfid_cc1101.o(i.RFID_GetFrame)
+    i.RFID_HarewreInit                       0x08000670   Section        0  rfid_cc1101.o(i.RFID_HarewreInit)
+    i.RFID_Init                              0x080006c0   Section        0  rfid_driver.o(i.RFID_Init)
+    i.RfidChipReset                          0x080006ec   Section        0  rfid_cc1101.o(i.RfidChipReset)
+    i.RfidConfig                             0x08000708   Section        0  rfid_cc1101.o(i.RfidConfig)
+    i.RfidGDOxIntInit                        0x080007b0   Section        0  rfid_driver.o(i.RfidGDOxIntInit)
+    i.RfidGetTxStatus                        0x08000830   Section        0  rfid_cc1101.o(i.RfidGetTxStatus)
+    i.RfidReadFifo                           0x0800083a   Section        0  rfid_cc1101.o(i.RfidReadFifo)
+    i.RfidReadFifoProc                       0x0800084c   Section        0  rfid_cc1101.o(i.RfidReadFifoProc)
+    i.RfidReadStatusReg                      0x080008d2   Section        0  rfid_cc1101.o(i.RfidReadStatusReg)
+    i.RfidRxRegInit                          0x080008e8   Section        0  rfid_cc1101.o(i.RfidRxRegInit)
+    i.RfidSpiConfig                          0x0800096c   Section        0  rfid_driver.o(i.RfidSpiConfig)
+    i.RfidSpiInit                            0x080009f4   Section        0  rfid_driver.o(i.RfidSpiInit)
+    i.RfidSpiWrite                           0x080009fc   Section        0  rfid_cc1101.o(i.RfidSpiWrite)
+    i.RfidStrobe                             0x08000a18   Section        0  rfid_cc1101.o(i.RfidStrobe)
+    i.RfidWriteReg                           0x08000a84   Section        0  rfid_cc1101.o(i.RfidWriteReg)
+    i.SVC_Handler                            0x08000a94   Section        0  gd32f1x0_it.o(i.SVC_Handler)
+    i.SendResponseData                       0x08000a96   Section        0  usartapp.o(i.SendResponseData)
+    i.SendWirelesstData                      0x08000ac6   Section        0  usartapp.o(i.SendWirelesstData)
+    i.SetRfidSRX                             0x08000b02   Section        0  rfid_driver.o(i.SetRfidSRX)
+    i.SetRxMode                              0x08000b0c   Section        0  rfid_cc1101.o(i.SetRxMode)
+    i.SpiMcuRead                             0x08000b38   Section        0  rfid_cc1101.o(i.SpiMcuRead)
+    i.SpiMcuWrite                            0x08000ba8   Section        0  rfid_cc1101.o(i.SpiMcuWrite)
+    i.SpiResetChipSingle                     0x08000c14   Section        0  rfid_cc1101.o(i.SpiResetChipSingle)
+    i.SysTick_Handler                        0x08000c5c   Section        0  gd32f1x0_it.o(i.SysTick_Handler)
+    i.SystemInit                             0x08000c64   Section        0  system_gd32f1x0.o(i.SystemInit)
+    i.USART0_IRQHandler                      0x08000d40   Section        0  usart.o(i.USART0_IRQHandler)
+    i.UpdateVersion                          0x08000e78   Section        0  main.o(i.UpdateVersion)
+    i.UsageFault_Handler                     0x08000eb8   Section        0  gd32f1x0_it.o(i.UsageFault_Handler)
+    i.WL_ReceiveData                         0x08000ebc   Section        0  rfid_driver.o(i.WL_ReceiveData)
+    i.WaitGPIOReset                          0x08000f1c   Section        0  rfid_cc1101.o(i.WaitGPIOReset)
+    i.Wl_RxDataProc                          0x08000f44   Section        0  wireless.o(i.Wl_RxDataProc)
+    i.__scatterload_copy                     0x08001084   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x08001092   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x08001094   Section       14  handlers.o(i.__scatterload_zeroinit)
+    i.delay_1us                              0x080010a4   Section        0  systick.o(i.delay_1us)
+    i.delay_decrement                        0x08001104   Section        0  systick.o(i.delay_decrement)
+    i.dma_channel_disable                    0x0800111c   Section        0  gd32f1x0_dma.o(i.dma_channel_disable)
+    i.dma_channel_enable                     0x08001140   Section        0  gd32f1x0_dma.o(i.dma_channel_enable)
+    i.dma_memory_address_config              0x08001164   Section        0  gd32f1x0_dma.o(i.dma_memory_address_config)
+    i.dma_transfer_number_config             0x08001178   Section        0  gd32f1x0_dma.o(i.dma_transfer_number_config)
+    i.exti_init                              0x08001190   Section        0  gd32f1x0_exti.o(i.exti_init)
+    i.exti_interrupt_flag_clear              0x0800124c   Section        0  gd32f1x0_exti.o(i.exti_interrupt_flag_clear)
+    i.exti_interrupt_flag_get                0x08001258   Section        0  gd32f1x0_exti.o(i.exti_interrupt_flag_get)
+    i.fmc_flag_clear                         0x0800127c   Section        0  gd32f1x0_fmc.o(i.fmc_flag_clear)
+    i.fmc_lock                               0x08001288   Section        0  gd32f1x0_fmc.o(i.fmc_lock)
+    i.fmc_page_erase                         0x0800129c   Section        0  gd32f1x0_fmc.o(i.fmc_page_erase)
+    i.fmc_ready_wait                         0x080012e4   Section        0  gd32f1x0_fmc.o(i.fmc_ready_wait)
+    fmc_ready_wait                           0x080012e5   Thumb Code    34  gd32f1x0_fmc.o(i.fmc_ready_wait)
+    i.fmc_state_get                          0x08001308   Section        0  gd32f1x0_fmc.o(i.fmc_state_get)
+    fmc_state_get                            0x08001309   Thumb Code    44  gd32f1x0_fmc.o(i.fmc_state_get)
+    i.fmc_unlock                             0x08001338   Section        0  gd32f1x0_fmc.o(i.fmc_unlock)
+    i.fmc_word_program                       0x0800135c   Section        0  gd32f1x0_fmc.o(i.fmc_word_program)
+    i.gpio_af_set                            0x0800139c   Section        0  gd32f1x0_gpio.o(i.gpio_af_set)
+    i.gpio_bit_reset                         0x080013fa   Section        0  gd32f1x0_gpio.o(i.gpio_bit_reset)
+    i.gpio_bit_set                           0x080013fe   Section        0  gd32f1x0_gpio.o(i.gpio_bit_set)
+    i.gpio_mode_set                          0x08001402   Section        0  gd32f1x0_gpio.o(i.gpio_mode_set)
+    i.gpio_output_bit_get                    0x08001450   Section        0  gd32f1x0_gpio.o(i.gpio_output_bit_get)
+    i.gpio_output_options_set                0x08001460   Section        0  gd32f1x0_gpio.o(i.gpio_output_options_set)
+    i.main                                   0x080014a2   Section        0  main.o(i.main)
+    i.nvic_irq_enable                        0x080014bc   Section        0  gd32f1x0_misc.o(i.nvic_irq_enable)
+    i.nvic_priority_group_set                0x08001568   Section        0  gd32f1x0_misc.o(i.nvic_priority_group_set)
+    i.nvic_vector_table_set                  0x0800157c   Section        0  gd32f1x0_misc.o(i.nvic_vector_table_set)
+    i.rcu_periph_clock_enable                0x080015a0   Section        0  gd32f1x0_rcu.o(i.rcu_periph_clock_enable)
+    i.rcu_periph_reset_disable               0x080015c0   Section        0  gd32f1x0_rcu.o(i.rcu_periph_reset_disable)
+    i.rcu_periph_reset_enable                0x080015e0   Section        0  gd32f1x0_rcu.o(i.rcu_periph_reset_enable)
+    i.spi_crc_polynomial_set                 0x08001600   Section        0  gd32f1x0_spi.o(i.spi_crc_polynomial_set)
+    i.spi_enable                             0x0800160c   Section        0  gd32f1x0_spi.o(i.spi_enable)
+    i.spi_i2s_data_receive                   0x08001616   Section        0  gd32f1x0_spi.o(i.spi_i2s_data_receive)
+    i.spi_i2s_data_transmit                  0x0800161e   Section        0  gd32f1x0_spi.o(i.spi_i2s_data_transmit)
+    i.spi_i2s_deinit                         0x08001624   Section        0  gd32f1x0_spi.o(i.spi_i2s_deinit)
+    i.spi_i2s_flag_get                       0x0800167c   Section        0  gd32f1x0_spi.o(i.spi_i2s_flag_get)
+    i.spi_init                               0x0800168c   Section        0  gd32f1x0_spi.o(i.spi_init)
+    i.spi_struct_para_init                   0x080016be   Section        0  gd32f1x0_spi.o(i.spi_struct_para_init)
+    i.spi_write                              0x080016d0   Section        0  rfid_cc1101.o(i.spi_write)
+    i.syscfg_exti_line_config                0x0800170c   Section        0  gd32f1x0_syscfg.o(i.syscfg_exti_line_config)
+    i.system_clock_72m_hxtal                 0x080017ac   Section        0  system_gd32f1x0.o(i.system_clock_72m_hxtal)
+    system_clock_72m_hxtal                   0x080017ad   Thumb Code   154  system_gd32f1x0.o(i.system_clock_72m_hxtal)
+    i.system_clock_config                    0x08001850   Section        0  system_gd32f1x0.o(i.system_clock_config)
+    system_clock_config                      0x08001851   Thumb Code     8  system_gd32f1x0.o(i.system_clock_config)
+    i.u8IapEraserSector                      0x08001858   Section        0  iapupdate.o(i.u8IapEraserSector)
+    i.u8IapReadBuf                           0x0800186c   Section        0  iapupdate.o(i.u8IapReadBuf)
+    i.u8IapWriteBuf                          0x08001886   Section        0  iapupdate.o(i.u8IapWriteBuf)
+    i.u8InFlashReadBuf                       0x080018a4   Section        0  iapupdate.o(i.u8InFlashReadBuf)
+    i.u8InFlashWriteBuf                      0x080018be   Section        0  iapupdate.o(i.u8InFlashWriteBuf)
+    i.upgrade                                0x0800196c   Section        0  main.o(i.upgrade)
+    i.usart_data_receive                     0x08001a00   Section        0  gd32f1x0_usart.o(i.usart_data_receive)
+    i.usart_flag_get                         0x08001a0a   Section        0  gd32f1x0_usart.o(i.usart_flag_get)
+    i.usart_interrupt_flag_clear             0x08001a28   Section        0  gd32f1x0_usart.o(i.usart_interrupt_flag_clear)
+    i.vIapJumpToApp                          0x08001a3c   Section        0  iapupdate.o(i.vIapJumpToApp)
+    i.vInFlashErasePage                      0x08001a7c   Section        0  iapupdate.o(i.vInFlashErasePage)
+    .constdata                               0x08001ad2   Section      512  usart.o(.constdata)
+    .constdata                               0x08001cd2   Section       70  rfid_cc1101.o(.constdata)
+    s_u8RFAttenuationCfgTab                  0x08001d04   Data           4  rfid_cc1101.o(.constdata)
+    s_u8RFCReg_FIFOTHR_BIT6                  0x08001d08   Data           2  rfid_cc1101.o(.constdata)
+    .data                                    0x20000000   Section       12  systick.o(.data)
+    count_1us                                0x20000000   Data           4  systick.o(.data)
+    count_1ms                                0x20000004   Data           4  systick.o(.data)
+    delay                                    0x20000008   Data           4  systick.o(.data)
+    .data                                    0x2000000c   Section        3  usart.o(.data)
+    .data                                    0x20000010   Section       51  usartapp.o(.data)
+    u8LiuShuiNumb                            0x2000003c   Data           1  usartapp.o(.data)
+    u8TxBufTxWrtPtr                          0x2000003d   Data           1  usartapp.o(.data)
+    u16CrcCalculate                          0x2000003e   Data           2  usartapp.o(.data)
+    u16Crc                                   0x20000040   Data           2  usartapp.o(.data)
+    u8DestScNumbBackup                       0x20000042   Data           1  usartapp.o(.data)
+    .data                                    0x20000044   Section       76  rfid_cc1101.o(.data)
+    .data                                    0x20000090   Section        1  rfid_driver.o(.data)
+    .data                                    0x20000094   Section       12  wireless.o(.data)
+    RFID_StateInquireIntv                    0x20000094   Data           4  wireless.o(.data)
+    RFID_Sleep                               0x20000098   Data           2  wireless.o(.data)
+    RFID_Init_Num                            0x2000009c   Data           4  wireless.o(.data)
+    .data                                    0x200000a0   Section        4  iapupdate.o(.data)
+    .bss                                     0x200000a4   Section     1500  usart.o(.bss)
+    .bss                                     0x20000680   Section     1360  usartapp.o(.bss)
+    .bss                                     0x20000bd0   Section      944  rfid_cc1101.o(.bss)
+    STACK                                    0x20000f80   Section     1024  startup_gd32f1x0.o(STACK)
+
+    Global Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    BuildAttributes$$THM_ISAv4$P$D$K$B$S$PE$A:L22UL41UL21$X:L11$S22US41US21$IEEE1$IW$USESV6$~STKCKD$USESV7$~SHL$OTIME$ROPI$EBA8$MICROLIB$REQ8$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    __ARM_use_no_argv                        0x00000000   Number         0  main.o ABSOLUTE
+    __arm_fini_                               - Undefined Weak Reference
+    __cpp_initialize__aeabi_                  - Undefined Weak Reference
+    __cxa_finalize                            - Undefined Weak Reference
+    __decompress                              - Undefined Weak Reference
+    _clock_init                               - Undefined Weak Reference
+    _microlib_exit                            - Undefined Weak Reference
+    __Vectors_Size                           0x00000168   Number         0  startup_gd32f1x0.o ABSOLUTE
+    __Vectors                                0x08000000   Data           4  startup_gd32f1x0.o(RESET)
+    __Vectors_End                            0x08000168   Data           0  startup_gd32f1x0.o(RESET)
+    __main                                   0x08000169   Thumb Code     0  entry.o(.ARM.Collect$$$$00000000)
+    _main_stk                                0x08000169   Thumb Code     0  entry2.o(.ARM.Collect$$$$00000001)
+    _main_scatterload                        0x0800016d   Thumb Code     0  entry5.o(.ARM.Collect$$$$00000004)
+    __main_after_scatterload                 0x08000171   Thumb Code     0  entry5.o(.ARM.Collect$$$$00000004)
+    _main_clock                              0x08000171   Thumb Code     0  entry7b.o(.ARM.Collect$$$$00000008)
+    _main_cpp_init                           0x08000171   Thumb Code     0  entry8b.o(.ARM.Collect$$$$0000000A)
+    _main_init                               0x08000171   Thumb Code     0  entry9a.o(.ARM.Collect$$$$0000000B)
+    __rt_lib_shutdown_fini                   0x08000179   Thumb Code     0  entry12b.o(.ARM.Collect$$$$0000000E)
+    __rt_final_cpp                           0x0800017d   Thumb Code     0  entry10a.o(.ARM.Collect$$$$0000000F)
+    __rt_final_exit                          0x0800017d   Thumb Code     0  entry11a.o(.ARM.Collect$$$$00000011)
+    Reset_Handler                            0x08000181   Thumb Code     8  startup_gd32f1x0.o(.text)
+    ADC_CMP_IRQHandler                       0x0800019b   Thumb Code     0  startup_gd32f1x0.o(.text)
+    CAN0_RX0_IRQHandler                      0x0800019b   Thumb Code     0  startup_gd32f1x0.o(.text)
+    CAN0_RX1_IRQHandler                      0x0800019b   Thumb Code     0  startup_gd32f1x0.o(.text)
+    CAN0_SCE_IRQHandler                      0x0800019b   Thumb Code     0  startup_gd32f1x0.o(.text)
+    CAN0_TX_IRQHandler                       0x0800019b   Thumb Code     0  startup_gd32f1x0.o(.text)
+    CAN1_RX0_IRQHandler                      0x0800019b   Thumb Code     0  startup_gd32f1x0.o(.text)
+    CAN1_RX1_IRQHandler                      0x0800019b   Thumb Code     0  startup_gd32f1x0.o(.text)
+    CAN1_SCE_IRQHandler                      0x0800019b   Thumb Code     0  startup_gd32f1x0.o(.text)
+    CAN1_TX_IRQHandler                       0x0800019b   Thumb Code     0  startup_gd32f1x0.o(.text)
+    CEC_IRQHandler                           0x0800019b   Thumb Code     0  startup_gd32f1x0.o(.text)
+    DMA_Channel0_IRQHandler                  0x0800019b   Thumb Code     0  startup_gd32f1x0.o(.text)
+    DMA_Channel1_2_IRQHandler                0x0800019b   Thumb Code     0  startup_gd32f1x0.o(.text)
+    DMA_Channel3_4_IRQHandler                0x0800019b   Thumb Code     0  startup_gd32f1x0.o(.text)
+    DMA_Channel5_6_IRQHandler                0x0800019b   Thumb Code     0  startup_gd32f1x0.o(.text)
+    EXTI2_3_IRQHandler                       0x0800019b   Thumb Code     0  startup_gd32f1x0.o(.text)
+    FMC_IRQHandler                           0x0800019b   Thumb Code     0  startup_gd32f1x0.o(.text)
+    I2C0_ER_IRQHandler                       0x0800019b   Thumb Code     0  startup_gd32f1x0.o(.text)
+    I2C0_EV_IRQHandler                       0x0800019b   Thumb Code     0  startup_gd32f1x0.o(.text)
+    I2C1_ER_IRQHandler                       0x0800019b   Thumb Code     0  startup_gd32f1x0.o(.text)
+    I2C1_EV_IRQHandler                       0x0800019b   Thumb Code     0  startup_gd32f1x0.o(.text)
+    I2C2_ER_IRQHandler                       0x0800019b   Thumb Code     0  startup_gd32f1x0.o(.text)
+    I2C2_EV_IRQHandler                       0x0800019b   Thumb Code     0  startup_gd32f1x0.o(.text)
+    LVD_IRQHandler                           0x0800019b   Thumb Code     0  startup_gd32f1x0.o(.text)
+    RCU_IRQHandler                           0x0800019b   Thumb Code     0  startup_gd32f1x0.o(.text)
+    RTC_IRQHandler                           0x0800019b   Thumb Code     0  startup_gd32f1x0.o(.text)
+    SLCD_IRQHandler                          0x0800019b   Thumb Code     0  startup_gd32f1x0.o(.text)
+    SPI0_IRQHandler                          0x0800019b   Thumb Code     0  startup_gd32f1x0.o(.text)
+    SPI1_IRQHandler                          0x0800019b   Thumb Code     0  startup_gd32f1x0.o(.text)
+    SPI2_IRQHandler                          0x0800019b   Thumb Code     0  startup_gd32f1x0.o(.text)
+    TIMER0_BRK_UP_TRG_COM_IRQHandler         0x0800019b   Thumb Code     0  startup_gd32f1x0.o(.text)
+    TIMER0_Channel_IRQHandler                0x0800019b   Thumb Code     0  startup_gd32f1x0.o(.text)
+    TIMER13_IRQHandler                       0x0800019b   Thumb Code     0  startup_gd32f1x0.o(.text)
+    TIMER14_IRQHandler                       0x0800019b   Thumb Code     0  startup_gd32f1x0.o(.text)
+    TIMER15_IRQHandler                       0x0800019b   Thumb Code     0  startup_gd32f1x0.o(.text)
+    TIMER16_IRQHandler                       0x0800019b   Thumb Code     0  startup_gd32f1x0.o(.text)
+    TIMER1_IRQHandler                        0x0800019b   Thumb Code     0  startup_gd32f1x0.o(.text)
+    TIMER2_IRQHandler                        0x0800019b   Thumb Code     0  startup_gd32f1x0.o(.text)
+    TIMER5_DAC_IRQHandler                    0x0800019b   Thumb Code     0  startup_gd32f1x0.o(.text)
+    TSI_IRQHandler                           0x0800019b   Thumb Code     0  startup_gd32f1x0.o(.text)
+    USART1_IRQHandler                        0x0800019b   Thumb Code     0  startup_gd32f1x0.o(.text)
+    USBDWakeUp_IRQHandler                    0x0800019b   Thumb Code     0  startup_gd32f1x0.o(.text)
+    USBD_HP_IRQHandler                       0x0800019b   Thumb Code     0  startup_gd32f1x0.o(.text)
+    USBD_LP_IRQHandler                       0x0800019b   Thumb Code     0  startup_gd32f1x0.o(.text)
+    WWDGT_IRQHandler                         0x0800019b   Thumb Code     0  startup_gd32f1x0.o(.text)
+    ___aeabi_memcpy8$move                    0x080001a5   Thumb Code     0  memmovea.o(.text)
+    __aeabi_memcpy                           0x080001a5   Thumb Code    64  memmovea.o(.text)
+    __aeabi_memcpy4                          0x080001a5   Thumb Code     0  memmovea.o(.text)
+    __aeabi_memmove                          0x080001a5   Thumb Code     0  memmovea.o(.text)
+    __aeabi_memmove4                         0x080001a5   Thumb Code     0  memmovea.o(.text)
+    __aeabi_memmove8                         0x080001a5   Thumb Code     0  memmovea.o(.text)
+    __aeabi_memset                           0x080001e5   Thumb Code    14  memseta.o(.text)
+    __aeabi_memset4                          0x080001e5   Thumb Code     0  memseta.o(.text)
+    __aeabi_memset8                          0x080001e5   Thumb Code     0  memseta.o(.text)
+    __aeabi_memclr                           0x080001f3   Thumb Code     4  memseta.o(.text)
+    __aeabi_memclr4                          0x080001f3   Thumb Code     0  memseta.o(.text)
+    __aeabi_memclr8                          0x080001f3   Thumb Code     0  memseta.o(.text)
+    _memset$wrapper                          0x080001f7   Thumb Code    18  memseta.o(.text)
+    __aeabi_fmul                             0x08000209   Thumb Code   100  fmul.o(.text)
+    __aeabi_ui2f                             0x0800026d   Thumb Code    10  ffltui.o(.text)
+    __aeabi_f2uiz                            0x08000277   Thumb Code    40  ffixui.o(.text)
+    __I$use$fp                               0x0800029f   Thumb Code     0  iusefp.o(.text)
+    _float_round                             0x0800029f   Thumb Code    18  fepilogue.o(.text)
+    _float_epilogue                          0x080002b1   Thumb Code    92  fepilogue.o(.text)
+    __scatterload                            0x0800030d   Thumb Code    28  init.o(.text)
+    __scatterload_rt2                        0x0800030d   Thumb Code     0  init.o(.text)
+    BusFault_Handler                         0x08000331   Thumb Code     4  gd32f1x0_it.o(i.BusFault_Handler)
+    Crc16UsartReceiveChick                   0x08000335   Thumb Code    44  usart.o(i.Crc16UsartReceiveChick)
+    DebugMon_Handler                         0x08000365   Thumb Code     2  gd32f1x0_it.o(i.DebugMon_Handler)
+    EXTI0_1_IRQHandler                       0x08000369   Thumb Code    74  rfid_cc1101.o(i.EXTI0_1_IRQHandler)
+    EXTI4_15_IRQHandler                      0x080003bd   Thumb Code   192  rfid_cc1101.o(i.EXTI4_15_IRQHandler)
+    GetRfidCurStatus                         0x08000491   Thumb Code     8  rfid_driver.o(i.GetRfidCurStatus)
+    HardFault_Handler                        0x08000499   Thumb Code     4  gd32f1x0_it.o(i.HardFault_Handler)
+    MemManage_Handler                        0x080005cd   Thumb Code     4  gd32f1x0_it.o(i.MemManage_Handler)
+    NMI_Handler                              0x080005d1   Thumb Code     2  gd32f1x0_it.o(i.NMI_Handler)
+    NVIC_DeInit                              0x080005d5   Thumb Code    52  iapupdate.o(i.NVIC_DeInit)
+    PendSV_Handler                           0x08000615   Thumb Code     2  gd32f1x0_it.o(i.PendSV_Handler)
+    RFID_GetFrame                            0x08000619   Thumb Code    76  rfid_cc1101.o(i.RFID_GetFrame)
+    RFID_HarewreInit                         0x08000671   Thumb Code    68  rfid_cc1101.o(i.RFID_HarewreInit)
+    RFID_Init                                0x080006c1   Thumb Code    38  rfid_driver.o(i.RFID_Init)
+    RfidChipReset                            0x080006ed   Thumb Code    26  rfid_cc1101.o(i.RfidChipReset)
+    RfidConfig                               0x08000709   Thumb Code   132  rfid_cc1101.o(i.RfidConfig)
+    RfidGDOxIntInit                          0x080007b1   Thumb Code   122  rfid_driver.o(i.RfidGDOxIntInit)
+    RfidGetTxStatus                          0x08000831   Thumb Code    10  rfid_cc1101.o(i.RfidGetTxStatus)
+    RfidReadFifo                             0x0800083b   Thumb Code    18  rfid_cc1101.o(i.RfidReadFifo)
+    RfidReadFifoProc                         0x0800084d   Thumb Code   134  rfid_cc1101.o(i.RfidReadFifoProc)
+    RfidReadStatusReg                        0x080008d3   Thumb Code    22  rfid_cc1101.o(i.RfidReadStatusReg)
+    RfidRxRegInit                            0x080008e9   Thumb Code   114  rfid_cc1101.o(i.RfidRxRegInit)
+    RfidSpiConfig                            0x0800096d   Thumb Code   130  rfid_driver.o(i.RfidSpiConfig)
+    RfidSpiInit                              0x080009f5   Thumb Code     8  rfid_driver.o(i.RfidSpiInit)
+    RfidSpiWrite                             0x080009fd   Thumb Code    28  rfid_cc1101.o(i.RfidSpiWrite)
+    RfidStrobe                               0x08000a19   Thumb Code   100  rfid_cc1101.o(i.RfidStrobe)
+    RfidWriteReg                             0x08000a85   Thumb Code    16  rfid_cc1101.o(i.RfidWriteReg)
+    SVC_Handler                              0x08000a95   Thumb Code     2  gd32f1x0_it.o(i.SVC_Handler)
+    SendResponseData                         0x08000a97   Thumb Code    48  usartapp.o(i.SendResponseData)
+    SendWirelesstData                        0x08000ac7   Thumb Code    60  usartapp.o(i.SendWirelesstData)
+    SetRfidSRX                               0x08000b03   Thumb Code    10  rfid_driver.o(i.SetRfidSRX)
+    SetRxMode                                0x08000b0d   Thumb Code    42  rfid_cc1101.o(i.SetRxMode)
+    SpiMcuRead                               0x08000b39   Thumb Code   108  rfid_cc1101.o(i.SpiMcuRead)
+    SpiMcuWrite                              0x08000ba9   Thumb Code   102  rfid_cc1101.o(i.SpiMcuWrite)
+    SpiResetChipSingle                       0x08000c15   Thumb Code    68  rfid_cc1101.o(i.SpiResetChipSingle)
+    SysTick_Handler                          0x08000c5d   Thumb Code     8  gd32f1x0_it.o(i.SysTick_Handler)
+    SystemInit                               0x08000c65   Thumb Code   204  system_gd32f1x0.o(i.SystemInit)
+    USART0_IRQHandler                        0x08000d41   Thumb Code   292  usart.o(i.USART0_IRQHandler)
+    UpdateVersion                            0x08000e79   Thumb Code    56  main.o(i.UpdateVersion)
+    UsageFault_Handler                       0x08000eb9   Thumb Code     4  gd32f1x0_it.o(i.UsageFault_Handler)
+    WL_ReceiveData                           0x08000ebd   Thumb Code    86  rfid_driver.o(i.WL_ReceiveData)
+    WaitGPIOReset                            0x08000f1d   Thumb Code    38  rfid_cc1101.o(i.WaitGPIOReset)
+    Wl_RxDataProc                            0x08000f45   Thumb Code   308  wireless.o(i.Wl_RxDataProc)
+    __scatterload_copy                       0x08001085   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x08001093   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x08001095   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    delay_1us                                0x080010a5   Thumb Code    90  systick.o(i.delay_1us)
+    delay_decrement                          0x08001105   Thumb Code    18  systick.o(i.delay_decrement)
+    dma_channel_disable                      0x0800111d   Thumb Code    30  gd32f1x0_dma.o(i.dma_channel_disable)
+    dma_channel_enable                       0x08001141   Thumb Code    30  gd32f1x0_dma.o(i.dma_channel_enable)
+    dma_memory_address_config                0x08001165   Thumb Code    14  gd32f1x0_dma.o(i.dma_memory_address_config)
+    dma_transfer_number_config               0x08001179   Thumb Code    18  gd32f1x0_dma.o(i.dma_transfer_number_config)
+    exti_init                                0x08001191   Thumb Code   184  gd32f1x0_exti.o(i.exti_init)
+    exti_interrupt_flag_clear                0x0800124d   Thumb Code     6  gd32f1x0_exti.o(i.exti_interrupt_flag_clear)
+    exti_interrupt_flag_get                  0x08001259   Thumb Code    32  gd32f1x0_exti.o(i.exti_interrupt_flag_get)
+    fmc_flag_clear                           0x0800127d   Thumb Code     6  gd32f1x0_fmc.o(i.fmc_flag_clear)
+    fmc_lock                                 0x08001289   Thumb Code    14  gd32f1x0_fmc.o(i.fmc_lock)
+    fmc_page_erase                           0x0800129d   Thumb Code    66  gd32f1x0_fmc.o(i.fmc_page_erase)
+    fmc_unlock                               0x08001339   Thumb Code    22  gd32f1x0_fmc.o(i.fmc_unlock)
+    fmc_word_program                         0x0800135d   Thumb Code    58  gd32f1x0_fmc.o(i.fmc_word_program)
+    gpio_af_set                              0x0800139d   Thumb Code    94  gd32f1x0_gpio.o(i.gpio_af_set)
+    gpio_bit_reset                           0x080013fb   Thumb Code     4  gd32f1x0_gpio.o(i.gpio_bit_reset)
+    gpio_bit_set                             0x080013ff   Thumb Code     4  gd32f1x0_gpio.o(i.gpio_bit_set)
+    gpio_mode_set                            0x08001403   Thumb Code    78  gd32f1x0_gpio.o(i.gpio_mode_set)
+    gpio_output_bit_get                      0x08001451   Thumb Code    16  gd32f1x0_gpio.o(i.gpio_output_bit_get)
+    gpio_output_options_set                  0x08001461   Thumb Code    66  gd32f1x0_gpio.o(i.gpio_output_options_set)
+    main                                     0x080014a3   Thumb Code    24  main.o(i.main)
+    nvic_irq_enable                          0x080014bd   Thumb Code   162  gd32f1x0_misc.o(i.nvic_irq_enable)
+    nvic_priority_group_set                  0x08001569   Thumb Code    10  gd32f1x0_misc.o(i.nvic_priority_group_set)
+    nvic_vector_table_set                    0x0800157d   Thumb Code    28  gd32f1x0_misc.o(i.nvic_vector_table_set)
+    rcu_periph_clock_enable                  0x080015a1   Thumb Code    28  gd32f1x0_rcu.o(i.rcu_periph_clock_enable)
+    rcu_periph_reset_disable                 0x080015c1   Thumb Code    28  gd32f1x0_rcu.o(i.rcu_periph_reset_disable)
+    rcu_periph_reset_enable                  0x080015e1   Thumb Code    28  gd32f1x0_rcu.o(i.rcu_periph_reset_enable)
+    spi_crc_polynomial_set                   0x08001601   Thumb Code    12  gd32f1x0_spi.o(i.spi_crc_polynomial_set)
+    spi_enable                               0x0800160d   Thumb Code    10  gd32f1x0_spi.o(i.spi_enable)
+    spi_i2s_data_receive                     0x08001617   Thumb Code     8  gd32f1x0_spi.o(i.spi_i2s_data_receive)
+    spi_i2s_data_transmit                    0x0800161f   Thumb Code     4  gd32f1x0_spi.o(i.spi_i2s_data_transmit)
+    spi_i2s_deinit                           0x08001625   Thumb Code    82  gd32f1x0_spi.o(i.spi_i2s_deinit)
+    spi_i2s_flag_get                         0x0800167d   Thumb Code    16  gd32f1x0_spi.o(i.spi_i2s_flag_get)
+    spi_init                                 0x0800168d   Thumb Code    50  gd32f1x0_spi.o(i.spi_init)
+    spi_struct_para_init                     0x080016bf   Thumb Code    18  gd32f1x0_spi.o(i.spi_struct_para_init)
+    spi_write                                0x080016d1   Thumb Code    54  rfid_cc1101.o(i.spi_write)
+    syscfg_exti_line_config                  0x0800170d   Thumb Code   154  gd32f1x0_syscfg.o(i.syscfg_exti_line_config)
+    u8IapEraserSector                        0x08001859   Thumb Code    20  iapupdate.o(i.u8IapEraserSector)
+    u8IapReadBuf                             0x0800186d   Thumb Code    26  iapupdate.o(i.u8IapReadBuf)
+    u8IapWriteBuf                            0x08001887   Thumb Code    30  iapupdate.o(i.u8IapWriteBuf)
+    u8InFlashReadBuf                         0x080018a5   Thumb Code    26  iapupdate.o(i.u8InFlashReadBuf)
+    u8InFlashWriteBuf                        0x080018bf   Thumb Code   174  iapupdate.o(i.u8InFlashWriteBuf)
+    upgrade                                  0x0800196d   Thumb Code   134  main.o(i.upgrade)
+    usart_data_receive                       0x08001a01   Thumb Code    10  gd32f1x0_usart.o(i.usart_data_receive)
+    usart_flag_get                           0x08001a0b   Thumb Code    30  gd32f1x0_usart.o(i.usart_flag_get)
+    usart_interrupt_flag_clear               0x08001a29   Thumb Code    18  gd32f1x0_usart.o(i.usart_interrupt_flag_clear)
+    vIapJumpToApp                            0x08001a3d   Thumb Code    48  iapupdate.o(i.vIapJumpToApp)
+    vInFlashErasePage                        0x08001a7d   Thumb Code    86  iapupdate.o(i.vInFlashErasePage)
+    u16CrcUsarttab                           0x08001ad2   Data         512  usart.o(.constdata)
+    uc8Patabel                               0x08001cd2   Data           8  rfid_cc1101.o(.constdata)
+    st_RfConfigIndex                         0x08001cda   Data          34  rfid_cc1101.o(.constdata)
+    s_u8RFOutputPowerCfgTab                  0x08001cfc   Data           8  rfid_cc1101.o(.constdata)
+    s_u8RFCReg_MCSM2                         0x08001d0a   Data           2  rfid_cc1101.o(.constdata)
+    s_u8RFCReg_MDMCFG4                       0x08001d0c   Data           2  rfid_cc1101.o(.constdata)
+    s_u8RFCReg_MDMCFG3                       0x08001d0e   Data           2  rfid_cc1101.o(.constdata)
+    s_u8RFCReg_FSCAL3                        0x08001d10   Data           2  rfid_cc1101.o(.constdata)
+    s_u8RFCReg_TEST2                         0x08001d12   Data           2  rfid_cc1101.o(.constdata)
+    s_u8RFCReg_TEST1                         0x08001d14   Data           2  rfid_cc1101.o(.constdata)
+    s_u8RFCReg_DEVIATN                       0x08001d16   Data           2  rfid_cc1101.o(.constdata)
+    Region$$Table$$Base                      0x08001d18   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x08001d38   Number         0  anon$$obj.o(Region$$Table)
+    tmpTxWrtPtr                              0x2000000c   Data           1  usart.o(.data)
+    USARTWIRELESSRxWrtPtr                    0x2000000d   Data           1  usart.o(.data)
+    USARTWIRELESSRxRdPtr                     0x2000000e   Data           1  usart.o(.data)
+    Version                                  0x20000010   Data           7  usartapp.o(.data)
+    SC_RFID_ADDR                             0x20000017   Data           1  usartapp.o(.data)
+    USARTWIRELESSTxWrtPtr                    0x20000018   Data           1  usartapp.o(.data)
+    USARTWIRELESSTxRdPtr                     0x20000019   Data           1  usartapp.o(.data)
+    u32RecvBaseAddr                          0x2000001c   Data           4  usartapp.o(.data)
+    u32RecvOffsetAddr                        0x20000020   Data           4  usartapp.o(.data)
+    u32RecvTotalPacketNumb                   0x20000024   Data           4  usartapp.o(.data)
+    u32NowRecvPacketNumbVERSION              0x20000028   Data           4  usartapp.o(.data)
+    u32NowRecvPacketNumbCODE                 0x2000002c   Data           4  usartapp.o(.data)
+    u32RecvProgLength                        0x20000030   Data           4  usartapp.o(.data)
+    u32DevType                               0x20000034   Data           4  usartapp.o(.data)
+    u32timeover                              0x20000038   Data           4  usartapp.o(.data)
+    vu32GDO2IntFlag                          0x20000044   Data           4  rfid_cc1101.o(.data)
+    vu32GDO0IntFlag                          0x20000048   Data           4  rfid_cc1101.o(.data)
+    st_RfConfig                              0x2000004c   Data          34  rfid_cc1101.o(.data)
+    g_u8RFVelocityIdx                        0x2000006e   Data           1  rfid_cc1101.o(.data)
+    g_u16RunningMode                         0x20000070   Data           2  rfid_cc1101.o(.data)
+    st_RFChipPar                             0x20000072   Data           6  rfid_cc1101.o(.data)
+    u8RcvLength                              0x20000078   Data           1  rfid_cc1101.o(.data)
+    u32RcvFrmPoolWritePtr                    0x2000007c   Data           4  rfid_cc1101.o(.data)
+    u32RcvFrmPoolReadPtr                     0x20000080   Data           4  rfid_cc1101.o(.data)
+    u32RcvFrmPoolCnt                         0x20000084   Data           4  rfid_cc1101.o(.data)
+    vu32CC1100State                          0x20000088   Data           4  rfid_cc1101.o(.data)
+    RcvedBackCallFunc                        0x2000008c   Data           4  rfid_cc1101.o(.data)
+    ReciveRSSIData                           0x20000090   Data           1  rfid_driver.o(.data)
+    jumpToApp                                0x200000a0   Data           4  iapupdate.o(.data)
+    UsartReveiveDataBuf                      0x200000a4   Data         140  usart.o(.bss)
+    USARTWIRELESSRxBuf                       0x20000130   Data        1360  usart.o(.bss)
+    USARTWIRLELESSTxBuf                      0x20000680   Data        1360  usartapp.o(.bss)
+    u8RcvData                                0x20000bd0   Data         264  rfid_cc1101.o(.bss)
+    st_RFIDRcvFrmPool                        0x20000cd8   Data         680  rfid_cc1101.o(.bss)
+    __initial_sp                             0x20001380   Data           0  startup_gd32f1x0.o(STACK)
+
+
+
+==============================================================================
+
+Memory Map of the image
+
+  Image Entry point : 0x08000169
+
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00001ddc, Max: 0x00010000, ABSOLUTE)
+
+    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00001d38, Max: 0x00010000, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x08000000   0x08000000   0x00000168   Data   RO         3083    RESET               startup_gd32f1x0.o
+    0x08000168   0x08000168   0x00000000   Code   RO         3088  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
+    0x08000168   0x08000168   0x00000004   Code   RO         3109    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
+    0x0800016c   0x0800016c   0x00000004   Code   RO         3112    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
+    0x08000170   0x08000170   0x00000000   Code   RO         3114    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
+    0x08000170   0x08000170   0x00000000   Code   RO         3116    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
+    0x08000170   0x08000170   0x00000008   Code   RO         3117    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
+    0x08000178   0x08000178   0x00000004   Code   RO         3124    .ARM.Collect$$$$0000000E  mc_w.l(entry12b.o)
+    0x0800017c   0x0800017c   0x00000000   Code   RO         3119    .ARM.Collect$$$$0000000F  mc_w.l(entry10a.o)
+    0x0800017c   0x0800017c   0x00000000   Code   RO         3121    .ARM.Collect$$$$00000011  mc_w.l(entry11a.o)
+    0x0800017c   0x0800017c   0x00000004   Code   RO         3110    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
+    0x08000180   0x08000180   0x00000024   Code   RO         3084    .text               startup_gd32f1x0.o
+    0x080001a4   0x080001a4   0x00000040   Code   RO         3093    .text               mc_w.l(memmovea.o)
+    0x080001e4   0x080001e4   0x00000024   Code   RO         3095    .text               mc_w.l(memseta.o)
+    0x08000208   0x08000208   0x00000064   Code   RO         3101    .text               mf_w.l(fmul.o)
+    0x0800026c   0x0800026c   0x0000000a   Code   RO         3105    .text               mf_w.l(ffltui.o)
+    0x08000276   0x08000276   0x00000028   Code   RO         3107    .text               mf_w.l(ffixui.o)
+    0x0800029e   0x0800029e   0x00000000   Code   RO         3125    .text               mc_w.l(iusefp.o)
+    0x0800029e   0x0800029e   0x0000006e   Code   RO         3126    .text               mf_w.l(fepilogue.o)
+    0x0800030c   0x0800030c   0x00000024   Code   RO         3128    .text               mc_w.l(init.o)
+    0x08000330   0x08000330   0x00000004   Code   RO          159    i.BusFault_Handler  gd32f1x0_it.o
+    0x08000334   0x08000334   0x00000030   Code   RO          282    i.Crc16UsartReceiveChick  usart.o
+    0x08000364   0x08000364   0x00000002   Code   RO          160    i.DebugMon_Handler  gd32f1x0_it.o
+    0x08000366   0x08000366   0x00000002   PAD
+    0x08000368   0x08000368   0x00000054   Code   RO          466    i.EXTI0_1_IRQHandler  rfid_cc1101.o
+    0x080003bc   0x080003bc   0x000000d4   Code   RO          467    i.EXTI4_15_IRQHandler  rfid_cc1101.o
+    0x08000490   0x08000490   0x00000008   Code   RO          671    i.GetRfidCurStatus  rfid_driver.o
+    0x08000498   0x08000498   0x00000004   Code   RO          161    i.HardFault_Handler  gd32f1x0_it.o
+    0x0800049c   0x0800049c   0x00000130   Code   RO          352    i.InsUsartTrsQueue  usartapp.o
+    0x080005cc   0x080005cc   0x00000004   Code   RO          162    i.MemManage_Handler  gd32f1x0_it.o
+    0x080005d0   0x080005d0   0x00000002   Code   RO          163    i.NMI_Handler       gd32f1x0_it.o
+    0x080005d2   0x080005d2   0x00000002   PAD
+    0x080005d4   0x080005d4   0x00000040   Code   RO          808    i.NVIC_DeInit       iapupdate.o
+    0x08000614   0x08000614   0x00000002   Code   RO          164    i.PendSV_Handler    gd32f1x0_it.o
+    0x08000616   0x08000616   0x00000002   PAD
+    0x08000618   0x08000618   0x00000058   Code   RO          469    i.RFID_GetFrame     rfid_cc1101.o
+    0x08000670   0x08000670   0x00000050   Code   RO          470    i.RFID_HarewreInit  rfid_cc1101.o
+    0x080006c0   0x080006c0   0x0000002c   Code   RO          674    i.RFID_Init         rfid_driver.o
+    0x080006ec   0x080006ec   0x0000001a   Code   RO          472    i.RfidChipReset     rfid_cc1101.o
+    0x08000706   0x08000706   0x00000002   PAD
+    0x08000708   0x08000708   0x000000a8   Code   RO          473    i.RfidConfig        rfid_cc1101.o
+    0x080007b0   0x080007b0   0x00000080   Code   RO          676    i.RfidGDOxIntInit   rfid_driver.o
+    0x08000830   0x08000830   0x0000000a   Code   RO          474    i.RfidGetTxStatus   rfid_cc1101.o
+    0x0800083a   0x0800083a   0x00000012   Code   RO          476    i.RfidReadFifo      rfid_cc1101.o
+    0x0800084c   0x0800084c   0x00000086   Code   RO          477    i.RfidReadFifoProc  rfid_cc1101.o
+    0x080008d2   0x080008d2   0x00000016   Code   RO          478    i.RfidReadStatusReg  rfid_cc1101.o
+    0x080008e8   0x080008e8   0x00000084   Code   RO          479    i.RfidRxRegInit     rfid_cc1101.o
+    0x0800096c   0x0800096c   0x00000088   Code   RO          677    i.RfidSpiConfig     rfid_driver.o
+    0x080009f4   0x080009f4   0x00000008   Code   RO          678    i.RfidSpiInit       rfid_driver.o
+    0x080009fc   0x080009fc   0x0000001c   Code   RO          480    i.RfidSpiWrite      rfid_cc1101.o
+    0x08000a18   0x08000a18   0x0000006c   Code   RO          481    i.RfidStrobe        rfid_cc1101.o
+    0x08000a84   0x08000a84   0x00000010   Code   RO          484    i.RfidWriteReg      rfid_cc1101.o
+    0x08000a94   0x08000a94   0x00000002   Code   RO          165    i.SVC_Handler       gd32f1x0_it.o
+    0x08000a96   0x08000a96   0x00000030   Code   RO          356    i.SendResponseData  usartapp.o
+    0x08000ac6   0x08000ac6   0x0000003c   Code   RO          359    i.SendWirelesstData  usartapp.o
+    0x08000b02   0x08000b02   0x0000000a   Code   RO          681    i.SetRfidSRX        rfid_driver.o
+    0x08000b0c   0x08000b0c   0x0000002a   Code   RO          489    i.SetRxMode         rfid_cc1101.o
+    0x08000b36   0x08000b36   0x00000002   PAD
+    0x08000b38   0x08000b38   0x00000070   Code   RO          490    i.SpiMcuRead        rfid_cc1101.o
+    0x08000ba8   0x08000ba8   0x0000006c   Code   RO          491    i.SpiMcuWrite       rfid_cc1101.o
+    0x08000c14   0x08000c14   0x00000048   Code   RO          492    i.SpiResetChipSingle  rfid_cc1101.o
+    0x08000c5c   0x08000c5c   0x00000008   Code   RO          166    i.SysTick_Handler   gd32f1x0_it.o
+    0x08000c64   0x08000c64   0x000000dc   Code   RO          953    i.SystemInit        system_gd32f1x0.o
+    0x08000d40   0x08000d40   0x00000138   Code   RO          283    i.USART0_IRQHandler  usart.o
+    0x08000e78   0x08000e78   0x00000040   Code   RO            4    i.UpdateVersion     main.o
+    0x08000eb8   0x08000eb8   0x00000004   Code   RO          167    i.UsageFault_Handler  gd32f1x0_it.o
+    0x08000ebc   0x08000ebc   0x00000060   Code   RO          683    i.WL_ReceiveData    rfid_driver.o
+    0x08000f1c   0x08000f1c   0x00000026   Code   RO          493    i.WaitGPIOReset     rfid_cc1101.o
+    0x08000f42   0x08000f42   0x00000002   PAD
+    0x08000f44   0x08000f44   0x00000140   Code   RO          783    i.Wl_RxDataProc     wireless.o
+    0x08001084   0x08001084   0x0000000e   Code   RO         3132    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x08001092   0x08001092   0x00000002   Code   RO         3133    i.__scatterload_null  mc_w.l(handlers.o)
+    0x08001094   0x08001094   0x0000000e   Code   RO         3134    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x080010a2   0x080010a2   0x00000002   PAD
+    0x080010a4   0x080010a4   0x00000060   Code   RO          235    i.delay_1us         systick.o
+    0x08001104   0x08001104   0x00000018   Code   RO          236    i.delay_decrement   systick.o
+    0x0800111c   0x0800111c   0x00000024   Code   RO          998    i.dma_channel_disable  gd32f1x0_dma.o
+    0x08001140   0x08001140   0x00000024   Code   RO          999    i.dma_channel_enable  gd32f1x0_dma.o
+    0x08001164   0x08001164   0x00000014   Code   RO         1010    i.dma_memory_address_config  gd32f1x0_dma.o
+    0x08001178   0x08001178   0x00000018   Code   RO         1023    i.dma_transfer_number_config  gd32f1x0_dma.o
+    0x08001190   0x08001190   0x000000bc   Code   RO         1183    i.exti_init         gd32f1x0_exti.o
+    0x0800124c   0x0800124c   0x0000000c   Code   RO         1186    i.exti_interrupt_flag_clear  gd32f1x0_exti.o
+    0x08001258   0x08001258   0x00000024   Code   RO         1187    i.exti_interrupt_flag_get  gd32f1x0_exti.o
+    0x0800127c   0x0800127c   0x0000000c   Code   RO         2894    i.fmc_flag_clear    gd32f1x0_fmc.o
+    0x08001288   0x08001288   0x00000014   Code   RO         2901    i.fmc_lock          gd32f1x0_fmc.o
+    0x0800129c   0x0800129c   0x00000048   Code   RO         2903    i.fmc_page_erase    gd32f1x0_fmc.o
+    0x080012e4   0x080012e4   0x00000022   Code   RO         2904    i.fmc_ready_wait    gd32f1x0_fmc.o
+    0x08001306   0x08001306   0x00000002   PAD
+    0x08001308   0x08001308   0x00000030   Code   RO         2905    i.fmc_state_get     gd32f1x0_fmc.o
+    0x08001338   0x08001338   0x00000024   Code   RO         2906    i.fmc_unlock        gd32f1x0_fmc.o
+    0x0800135c   0x0800135c   0x00000040   Code   RO         2909    i.fmc_word_program  gd32f1x0_fmc.o
+    0x0800139c   0x0800139c   0x0000005e   Code   RO         1268    i.gpio_af_set       gd32f1x0_gpio.o
+    0x080013fa   0x080013fa   0x00000004   Code   RO         1269    i.gpio_bit_reset    gd32f1x0_gpio.o
+    0x080013fe   0x080013fe   0x00000004   Code   RO         1270    i.gpio_bit_set      gd32f1x0_gpio.o
+    0x08001402   0x08001402   0x0000004e   Code   RO         1275    i.gpio_mode_set     gd32f1x0_gpio.o
+    0x08001450   0x08001450   0x00000010   Code   RO         1276    i.gpio_output_bit_get  gd32f1x0_gpio.o
+    0x08001460   0x08001460   0x00000042   Code   RO         1277    i.gpio_output_options_set  gd32f1x0_gpio.o
+    0x080014a2   0x080014a2   0x00000018   Code   RO            5    i.main              main.o
+    0x080014ba   0x080014ba   0x00000002   PAD
+    0x080014bc   0x080014bc   0x000000ac   Code   RO         2565    i.nvic_irq_enable   gd32f1x0_misc.o
+    0x08001568   0x08001568   0x00000014   Code   RO         2566    i.nvic_priority_group_set  gd32f1x0_misc.o
+    0x0800157c   0x0800157c   0x00000024   Code   RO         2567    i.nvic_vector_table_set  gd32f1x0_misc.o
+    0x080015a0   0x080015a0   0x00000020   Code   RO         2653    i.rcu_periph_clock_enable  gd32f1x0_rcu.o
+    0x080015c0   0x080015c0   0x00000020   Code   RO         2656    i.rcu_periph_reset_disable  gd32f1x0_rcu.o
+    0x080015e0   0x080015e0   0x00000020   Code   RO         2657    i.rcu_periph_reset_enable  gd32f1x0_rcu.o
+    0x08001600   0x08001600   0x0000000c   Code   RO         1375    i.spi_crc_polynomial_set  gd32f1x0_spi.o
+    0x0800160c   0x0800160c   0x0000000a   Code   RO         1379    i.spi_enable        gd32f1x0_spi.o
+    0x08001616   0x08001616   0x00000008   Code   RO         1381    i.spi_i2s_data_receive  gd32f1x0_spi.o
+    0x0800161e   0x0800161e   0x00000004   Code   RO         1382    i.spi_i2s_data_transmit  gd32f1x0_spi.o
+    0x08001622   0x08001622   0x00000002   PAD
+    0x08001624   0x08001624   0x00000058   Code   RO         1383    i.spi_i2s_deinit    gd32f1x0_spi.o
+    0x0800167c   0x0800167c   0x00000010   Code   RO         1384    i.spi_i2s_flag_get  gd32f1x0_spi.o
+    0x0800168c   0x0800168c   0x00000032   Code   RO         1388    i.spi_init          gd32f1x0_spi.o
+    0x080016be   0x080016be   0x00000012   Code   RO         1393    i.spi_struct_para_init  gd32f1x0_spi.o
+    0x080016d0   0x080016d0   0x0000003c   Code   RO          494    i.spi_write         rfid_cc1101.o
+    0x0800170c   0x0800170c   0x000000a0   Code   RO         1565    i.syscfg_exti_line_config  gd32f1x0_syscfg.o
+    0x080017ac   0x080017ac   0x000000a4   Code   RO          954    i.system_clock_72m_hxtal  system_gd32f1x0.o
+    0x08001850   0x08001850   0x00000008   Code   RO          955    i.system_clock_config  system_gd32f1x0.o
+    0x08001858   0x08001858   0x00000014   Code   RO          815    i.u8IapEraserSector  iapupdate.o
+    0x0800186c   0x0800186c   0x0000001a   Code   RO          818    i.u8IapReadBuf      iapupdate.o
+    0x08001886   0x08001886   0x0000001e   Code   RO          819    i.u8IapWriteBuf     iapupdate.o
+    0x080018a4   0x080018a4   0x0000001a   Code   RO          820    i.u8InFlashReadBuf  iapupdate.o
+    0x080018be   0x080018be   0x000000ae   Code   RO          821    i.u8InFlashWriteBuf  iapupdate.o
+    0x0800196c   0x0800196c   0x00000094   Code   RO            6    i.upgrade           main.o
+    0x08001a00   0x08001a00   0x0000000a   Code   RO         2089    i.usart_data_receive  gd32f1x0_usart.o
+    0x08001a0a   0x08001a0a   0x0000001e   Code   RO         2100    i.usart_flag_get    gd32f1x0_usart.o
+    0x08001a28   0x08001a28   0x00000012   Code   RO         2108    i.usart_interrupt_flag_clear  gd32f1x0_usart.o
+    0x08001a3a   0x08001a3a   0x00000002   PAD
+    0x08001a3c   0x08001a3c   0x00000040   Code   RO          824    i.vIapJumpToApp     iapupdate.o
+    0x08001a7c   0x08001a7c   0x00000056   Code   RO          826    i.vInFlashErasePage  iapupdate.o
+    0x08001ad2   0x08001ad2   0x00000200   Data   RO          290    .constdata          usart.o
+    0x08001cd2   0x08001cd2   0x00000046   Data   RO          496    .constdata          rfid_cc1101.o
+    0x08001d18   0x08001d18   0x00000020   Data   RO         3130    Region$$Table       anon$$obj.o
+
+
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08001d38, Size: 0x00001380, Max: 0x00002000, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x20000000   0x08001d38   0x0000000c   Data   RW          238    .data               systick.o
+    0x2000000c   0x08001d44   0x00000003   Data   RW          291    .data               usart.o
+    0x2000000f   0x08001d47   0x00000001   PAD
+    0x20000010   0x08001d48   0x00000033   Data   RW          365    .data               usartapp.o
+    0x20000043   0x08001d7b   0x00000001   PAD
+    0x20000044   0x08001d7c   0x0000004c   Data   RW          497    .data               rfid_cc1101.o
+    0x20000090   0x08001dc8   0x00000001   Data   RW          686    .data               rfid_driver.o
+    0x20000091   0x08001dc9   0x00000003   PAD
+    0x20000094   0x08001dcc   0x0000000c   Data   RW          784    .data               wireless.o
+    0x200000a0   0x08001dd8   0x00000004   Data   RW          829    .data               iapupdate.o
+    0x200000a4        -       0x000005dc   Zero   RW          289    .bss                usart.o
+    0x20000680        -       0x00000550   Zero   RW          364    .bss                usartapp.o
+    0x20000bd0        -       0x000003b0   Zero   RW          495    .bss                rfid_cc1101.o
+    0x20000f80        -       0x00000400   Zero   RW         3081    STACK               startup_gd32f1x0.o
+
+
+==============================================================================
+
+Image component sizes
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
+
+       116         24          0          0          0       2544   gd32f1x0_dma.o
+       236         14          0          0          0       2142   gd32f1x0_exti.o
+       286         42          0          0          0       4401   gd32f1x0_fmc.o
+       262          0          0          0          0       4506   gd32f1x0_gpio.o
+        32          0          0          0          0       4070   gd32f1x0_it.o
+       228         28          0          0          0       2176   gd32f1x0_misc.o
+        96         12          0          0          0       1847   gd32f1x0_rcu.o
+       206          6          0          0          0       5783   gd32f1x0_spi.o
+       160          6          0          0          0        806   gd32f1x0_syscfg.o
+        58          0          0          0          0       2063   gd32f1x0_usart.o
+       490         28          0          4          0       7872   iapupdate.o
+       236         22          0          0          0      65073   main.o
+      1558        136         70         76        944      20212   rfid_cc1101.o
+       430         28          0          1          0       4743   rfid_driver.o
+        36          8        360          0       1024        896   startup_gd32f1x0.o
+       392         26          0          0          0       2709   system_gd32f1x0.o
+       120         12          0         12          0       1662   systick.o
+       360         24        512          3       1500       2327   usart.o
+       412         22          0         51       1360       5020   usartapp.o
+       320         20          0         12          0        948   wireless.o
+
+    ----------------------------------------------------------------------
+      6054        458        974        164       4828     141800   Object Totals
+         0          0         32          0          0          0   (incl. Generated)
+        20          0          0          5          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Member Name
+
+         0          0          0          0          0          0   entry.o
+         0          0          0          0          0          0   entry10a.o
+         0          0          0          0          0          0   entry11a.o
+         4          0          0          0          0          0   entry12b.o
+         8          4          0          0          0          0   entry2.o
+         4          0          0          0          0          0   entry5.o
+         0          0          0          0          0          0   entry7b.o
+         0          0          0          0          0          0   entry8b.o
+         8          4          0          0          0          0   entry9a.o
+        30          0          0          0          0          0   handlers.o
+        36          8          0          0          0         68   init.o
+         0          0          0          0          0          0   iusefp.o
+        64          0          0          0          0         76   memmovea.o
+        36          0          0          0          0        108   memseta.o
+       110          0          0          0          0        168   fepilogue.o
+        40          0          0          0          0         68   ffixui.o
+        10          0          0          0          0         68   ffltui.o
+       100          0          0          0          0         76   fmul.o
+
+    ----------------------------------------------------------------------
+       452         16          0          0          0        632   Library Totals
+         2          0          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Name
+
+       190         16          0          0          0        252   mc_w.l
+       260          0          0          0          0        380   mf_w.l
+
+    ----------------------------------------------------------------------
+       452         16          0          0          0        632   Library Totals
+
+    ----------------------------------------------------------------------
+
+==============================================================================
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
+
+      6506        474        974        164       4828     137540   Grand Totals
+      6506        474        974        164       4828     137540   ELF Image Totals
+      6506        474        974        164          0          0   ROM Totals
+
+==============================================================================
+
+    Total RO  Size (Code + RO Data)                 7480 (   7.30kB)
+    Total RW  Size (RW Data + ZI Data)              4992 (   4.88kB)
+    Total ROM Size (Code + RO Data + RW Data)       7644 (   7.46kB)
+
+==============================================================================
+

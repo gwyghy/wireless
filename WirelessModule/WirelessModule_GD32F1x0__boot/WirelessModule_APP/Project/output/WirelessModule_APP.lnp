@@ -1,0 +1,27 @@
+--cpu Cortex-M3
+".\output\main.o"
+".\output\gd32f1x0_it.o"
+".\output\systick.o"
+".\output\usart.o"
+".\output\usartapp.o"
+".\output\rfid_cc1101.o"
+".\output\rfid_driver.o"
+".\output\wireless.o"
+".\output\iapupdate.o"
+".\output\system_gd32f1x0.o"
+".\output\gd32f1x0_dma.o"
+".\output\gd32f1x0_exti.o"
+".\output\gd32f1x0_gpio.o"
+".\output\gd32f1x0_spi.o"
+".\output\gd32f1x0_syscfg.o"
+".\output\gd32f1x0_timer.o"
+".\output\gd32f1x0_usart.o"
+".\output\gd32f1x0_wwdgt.o"
+".\output\gd32f1x0_misc.o"
+".\output\gd32f1x0_rcu.o"
+".\output\gd32f1x0_fmc.o"
+".\output\startup_gd32f1x0.o"
+--library_type=microlib --strict --scatter ".\output\WirelessModule_APP.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\list\WirelessModule_APP.map" -o .\output\WirelessModule_APP.axf
